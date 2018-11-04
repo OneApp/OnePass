@@ -19,7 +19,7 @@ public class TestAction extends ActionSupport {
 			System.out.println(u.getUserName());
 		}
 		if(users!=null) {
-			return SUCCESS;
+			return SUCCESS; 
 		}
 		return "index";
 	}
