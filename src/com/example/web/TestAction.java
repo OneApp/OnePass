@@ -21,6 +21,6 @@ public class TestAction extends ActionSupport {
 		if(users!=null) {
 			return SUCCESS;
 		}
-		return "index";  
+		return "index"; 
 	}
 }
