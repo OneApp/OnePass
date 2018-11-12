@@ -10,7 +10,7 @@ public class TestAction extends ActionSupport {
 	private TestService testService;
 	
 	public void setTestService(TestService testService) {
-		this.testService = testService;    
+		this.testService = testService;
 	}
 	
 	public String test() {
