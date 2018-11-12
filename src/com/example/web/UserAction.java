@@ -5,7 +5,7 @@ import com.example.service.TestService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 public class UserAction extends ActionSupport  implements ModelDriven<User> {
-	private User user = new User();
+	private User user = new User(); 
 	public User getModel() {
 		// TODO Auto-generated method stub
 		return user;

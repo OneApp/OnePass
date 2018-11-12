@@ -3,7 +3,7 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<!-- struts-default.xml在Struts2的核心包内 -->
+	<!-- struts-default.xml在Struts2的核心包内 --> 
 	<package name="user" extends="default" namespace="/">
 		<!-- 配置loginAction的login方法为一个Action -->
 		<action name="user_" class="userAction" method="{1}">
