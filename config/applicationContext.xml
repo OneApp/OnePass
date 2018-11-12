@@ -14,7 +14,20 @@
 	        http://www.springframework.org/schema/tx
 	        http://www.springframework.org/schema/tx/spring-tx.xsd"><!-- 这是完整约束，以后复制就好 -->
 	
-	<context:property-placeholder location="classpath:db.properties"/>
+	<context:property-placeholder location="classpath:db.properties,classpath:mail.properties"/>
+	<!-- spring邮件发送 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"><!-- 对activation.jar和mail.jar(这个是java对javamail的定义)有依赖 -->
+		<property name="host" value="${mail.smtp.host}"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.timeout">${mail.smtp.timeout}</prop>
+			</props>
+		</property>
+		<property name="username" value="${mail.smtp.username}"/>
+		<property name="password" value="${mail.smtp.password}"/>
+	</bean>
+	
 	<!-- 配置c3p0连接池，数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${jdbc.driver}"></property>
