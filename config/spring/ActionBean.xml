@@ -5,15 +5,15 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="testDAO" class="com.example.dao.impl.TestDAOImpl">
+	<!-- <bean id="UserAction" class="com.example.web.UserAction">
 		<property name="hibernateTemplate" ref="hTemplate"></property>
 	</bean>
 	
 	<bean id="testService" class="com.example.service.impl.TestServiceImpl">
 		<property name="testDAO" ref="testDAO"></property>
 	</bean>
-	
-	<bean id="testAction" class="com.example.web.TestAction" scope="prototype">
+	 -->
+	<bean id="testAction" class="com.example.web.UserAction" scope="prototype">
 		<property name="testService" ref="testService"></property>
 	</bean>
 </beans>
