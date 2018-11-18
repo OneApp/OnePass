@@ -29,8 +29,8 @@ public class UserDAOImpl implements UserDAO {
 	 */
 	@Override
 	public boolean login(User user) {
-	    String hql="from User where userName=? and userPassword=?";
-	    User u=(User) this.hibernateTemplate.find(hql,user.getUserName(),user.getUserPassword());
+	    String hql="from User where userName='"+user.getUserName()+"' and userPassword='"+user.getUserPassword()+"'";
+	    User u=(User) this.hibernateTemplate.find(hql);
 	    if(u==null||u.equals("")) 
 	    	return false;
 	    else
