@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.pojo.entity.User" table="onepass_user">
+        <id name="userId" type="java.lang.Integer">
+            <column name="userId" />
+            <generator class="assigned" />
+        </id>
+        <property name="userPhone" type="java.lang.String">
+            <column name="userPhone" />
+        </property>
+        <property name="userEmail" type="java.lang.String">
+            <column name="userEmail" />
+        </property>
+        <property name="userCreateDate" type="java.util.Date">
+            <column name="userCreateDate" />
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="userPassword" />
+        </property>
+        <property name="userPasswordTwo" type="java.lang.String">
+            <column name="userPasswordTwo" />
+        </property>
+        <property name="userPasswordThree" type="java.lang.String">
+            <column name="userPasswordThree" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="userName" />
+        </property>
+        <property name="userHead" type="java.lang.String">
+            <column name="userHead" />
+        </property>
+        <property name="userBirthday" type="java.util.Date">
+            <column name="userBirthday" />
+        </property>
+        <property name="userBirthdayIsCalendar" type="java.lang.Boolean">
+            <column name="userBirthdayIsCalendar" />
+        </property>
+        <property name="userSign" type="java.lang.String">
+            <column name="userSign" />
+        </property>
+        <property name="userHobbies" type="java.lang.String">
+            <column name="userHobbies" />
+        </property>
+        <property name="userMajor" type="java.lang.String">
+            <column name="userMajor" />
+        </property>
+        <property name="userHeight" type="java.lang.Integer">
+            <column name="userHeight" />
+        </property>
+        <property name="userWeight" type="java.lang.Integer">
+            <column name="userWeight" />
+        </property>
+    </class>
+</hibernate-mapping>
