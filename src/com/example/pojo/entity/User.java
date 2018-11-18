@@ -1,13 +1,13 @@
 package com.example.pojo.entity;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity   
+
+@Entity
 @Table
 public class User {
 	@Id
