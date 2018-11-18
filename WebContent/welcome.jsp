@@ -5,8 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
+<<<<<<< HEAD
+</head>    
 <body>
+=======
+</head>
+<body>   
+>>>>>>> refs/remotes/origin/chenwenquan
  it is working
 </body>
 </html>

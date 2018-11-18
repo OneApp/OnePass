@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.pojo.entity.UserOther" table="onepass_userother">
+        <id name="userOtherId" type="java.lang.Integer">
+            <column name="userOtherId" />
+            <generator class="assigned" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="userId" />
+        </property>
+        <property name="userCountry" type="java.lang.String">
+            <column name="userCountry" />
+        </property>
+        <property name="userNation" type="java.lang.String">
+            <column name="userNation" />
+        </property>
+        <property name="userSex" type="java.lang.String">
+            <column name="userSex" />
+        </property>
+        <property name="adminEmail" type="java.lang.String">
+            <column name="adminEmail" />
+        </property>
+        <property name="userSoldier" type="java.lang.Boolean">
+            <column name="userSoldier" />
+        </property>
+        <property name="userWeChat" type="java.lang.String">
+            <column name="userWeChat" />
+        </property>
+        <property name="userPolitical" type="java.lang.String">
+            <column name="userPolitical" />
+        </property>
+        <property name="userBloodType" type="java.lang.String">
+            <column name="userBloodType" />
+        </property>
+        <property name="userEducation" type="java.lang.String">
+            <column name="userEducation" />
+        </property>
+        <property name="userMarried" type="java.lang.Boolean">
+            <column name="userMarried" />
+        </property>
+        <property name="userIdPhoto" type="java.lang.String">
+            <column name="userIdPhoto" />
+        </property>
+        <property name="userProfession" type="java.lang.String">
+            <column name="userProfession" />
+        </property>
+        <property name="userSalary" type="java.lang.String">
+            <column name="userSalary" />
+        </property>
+        <property name="userRealName" type="java.lang.String">
+            <column name="userRealName" />
+        </property>
+        <property name="userIdNumber" type="java.lang.String">
+            <column name="userIdNumber" />
+        </property>
+        <property name="userNationPlace" type="java.lang.String">
+            <column name="userNationPlace" />
+        </property>
+        <property name="userLocation" type="java.lang.String">
+            <column name="userLocation" />
+        </property>
+    </class>
+</hibernate-mapping>
