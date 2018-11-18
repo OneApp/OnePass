@@ -11,6 +11,6 @@
 			<!-- action的返回的结果页面 -->
 			<result name="success">/welcome.jsp</result>
 			<result name="index">/fail.jsp</result>
-		</action>
+		</action>  
 	</package>
 </struts>
