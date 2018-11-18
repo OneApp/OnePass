@@ -6,7 +6,7 @@ import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
 
 public interface SeniorAdminDAO {
-	void login(Admin admin);
+	boolean login(Admin admin);
 	List<User> findAllUser();  
 	void updatePassword(int id);
 	void addGeneralAdmin();

@@ -6,7 +6,7 @@ import com.example.pojo.entity.User;
 
 public interface UserDAO {
 	List<User> findAllUser(int start ,int length);
-	void login(User user);
+	boolean login(User user);
 	void register(User user);
 	void findFirstPrivacy(int id);
 	void findSecondPrivacy(int id);
