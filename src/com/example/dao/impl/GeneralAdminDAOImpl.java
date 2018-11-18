@@ -23,23 +23,25 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	@Override
 	public boolean login(Admin admin) {
 		  String hql="from Admin where adminName=? and adminPassword=?";
-		  Admin a=(Admin) this.hibernateTemplate.find(hql,admin.getAdminName(),admin.getAdminPasswprd());
+		  Admin a=(Admin) this.hibernateTemplate.find(hql,admin.getAdminName(),admin.getAdminPassword());
 		  if(a==null||a.equals("")) 
 		    return false;
 		  else
 		    return true;
 	}
-	
+
 	@Override
 	public List<User> findAllUser() {
-		// TODO Auto-generated method stub
-		return null;
+		   String hql="from User";
+		   List<User> allUser=(List<User>) this.hibernateTemplate.find(hql);
+		   return allUser;
 	}
 
 	@Override
-	public void updatePassword(Admin admin) {
-		// TODO Auto-generated method stub
-
+	public void updatePassword(int id,String rePassword) {
+           Admin admin=this.hibernateTemplate.get(Admin.class, id);
+           admin.setAdminPassword(rePassword);
+           this.hibernateTemplate.update(admin);
 	}
 
 }

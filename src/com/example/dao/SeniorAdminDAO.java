@@ -8,7 +8,7 @@ import com.example.pojo.entity.User;
 public interface SeniorAdminDAO {
 	boolean login(Admin admin);
 	List<User> findAllUser();  
-	void updatePassword(int id);
+	void updatePassword(int id,String rePassword);
 	void addGeneralAdmin();
 	void deleteGeneralAdmin(int id);
 	void findGeneralAdmin(int id);
