@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<<<<<<< HEAD
-<hibernate-mapping>   
-=======
 <hibernate-mapping>
->>>>>>> branch 'chenwenquan' of https://github.com/OneApp/OnePass.git
     <class name="com.example.pojo.entity.User" table="onepass_user">
         <id name="userId" type="java.lang.Integer">
             <column name="userId" />
