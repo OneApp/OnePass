@@ -13,4 +13,5 @@
 			<result name="index">/fail.jsp</result>
 		</action>  
 	</package>
+
 </struts>
