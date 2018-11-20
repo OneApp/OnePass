@@ -1,11 +1,11 @@
 package com.example.web;
 import java.util.List;
-import com.example.pojo.entity.TestUser;
-import com.example.service.TestService;
+
+import com.example.pojo.entity.User;
+import com.example.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 /**
- * 
  * @author 崔朝阳
  */
 public class UserAction extends ActionSupport  implements ModelDriven<User> {
@@ -21,11 +21,11 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	}
 	/**
 	 * 
-	 * @param  User user  用来存储登陆输入框中的账号密码
-	 * @return 返回true登陆成功   否则 登陆失败
+	 * @param  User user  用来存储登陆界面中的User属性
+	 * @return 返回“匹配成功！”  登陆成功   否则 登陆失败
 	 */
 	public String login() {
-		if(testService.login(user)==true) {
+		if(userService.login(user)=="匹配成功!") {
 			 return "Login";       //如果为true,登陆成功
 		}
 		else {
@@ -38,13 +38,8 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return  返回true注册成功否则注册失败
 	 */
 	public String register() {
-		if(testService.registered(user)==true) { 
-			return  "registered"; 
-		}
-		else {
-			return "register_error";
-		}
-		
+	   userService.saveUser(user);
+			return  "registered";       
 	}
 	
 }
