@@ -36,8 +36,8 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * 
 	 * @param   User user 用来存储注册界面的账号密码等等 
 	 * @return  返回true注册成功否则注册失败
-	 */
-	public String register() {
+	 */   
+	String register() {
 	   userService.saveUser(user);
 			return  "registered";       
 	}
