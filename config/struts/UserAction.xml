@@ -12,5 +12,5 @@
 			<result name="login_error">/login.jsp</result>    <!--  登陆失败后刷新login界面 -->
 			<result name="registered">/success.jsp</result>   <!--  注册成功后到success界面 -->
 		</action>       
-	</package>
+	</package>   
 </struts>
