@@ -22,5 +22,5 @@ public interface UserService {
 	 * @param user	action传递过来的用户信息
 	 * @return	返回登录过程中出现的错误或成功信息
 	 */
-	public String login(User user);
+	public User login(User user);
 }

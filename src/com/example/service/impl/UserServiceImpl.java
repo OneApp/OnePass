@@ -35,29 +35,12 @@ public class UserServiceImpl implements UserService {
 	}
 	/**
 	 * @author 严子江
-	 * @param user action传过来的用户信息的javabean
-	 * @param existUser 根据用户名到数据库中查询返回的对象
-	 * @return 返回登录过程中出现的错误或成功信息
 	 */
 	@Override
-	public String login(User user) {
-		//根据用户名到数据库中查询返回的对象
-		User existUser=userDao.getByUserName(user.getUsername());
-		if(existUser!=null) {
-			if(existUser.getPassword().equals(user.getPassword())) {
-				return "匹配成功!";
-			}else {
-				return "密码错误无法登录!";
-			}
-		}else {
-			return "该用户不存在!";
-		}
+	public User login(User user) {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 	
-	
-	
-	
-	
-	
-
 }
