@@ -1,4 +1,7 @@
 package com.example.service;
+
+import com.example.pojo.entity.User;
+
 /**
  * 
  * @author 严子江,胡龙
