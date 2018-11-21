@@ -7,7 +7,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import com.example.dao.GeneralAdminDAO;
 import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
-
+ 
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	private HibernateTemplate hTemplate;
 	

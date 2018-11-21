@@ -28,7 +28,6 @@ public class UserDAOImpl implements UserDAO {
      * @see com.example.dao.UserDAO#loginByUsername(com.example.pojo.entity.User)
      * 通过用户名进行登录
      */
-	
 	@Override
 	public User loginByUsername(User user) {
 		String hql="from User where userName=? and userPassword=?";
@@ -41,7 +40,6 @@ public class UserDAOImpl implements UserDAO {
 	 * @see com.example.dao.UserDAO#loginByEmail(com.example.pojo.entity.User)
 	 * 通过邮箱账号进行登录
 	 */
-	
 	@Override
 	public User loginByEmail(User user) {
 		String hql="from User where userEmail=? and userPassword=?";
@@ -92,7 +90,7 @@ public class UserDAOImpl implements UserDAO {
      * (non-Javadoc)
      * @see com.example.dao.UserDAO#updatePassword(com.example.pojo.entity.User, java.lang.String)
      *通过传过来的用户信息及最新密码来更改用户密码
-     */
+     */   
 	@Override
 	public void updatePassword(User user, String rePassword) {
 		User u=this.hTemplate.get(User.class, user.getUserId());

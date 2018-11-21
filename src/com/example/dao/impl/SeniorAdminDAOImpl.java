@@ -84,7 +84,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 	public Admin addGeneralAdmin(Admin admin) {
 	    this.hTemplate.save(admin);
 		return admin;
-	}
+	}  
     
 	/*
 	 * (non-Javadoc)
