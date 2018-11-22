@@ -1,7 +1,7 @@
 package com.example.dao;
 
 import com.example.pojo.entity.User;
- 
+  
 public interface UserDAO {
 	User findByUsername(User user);
 	User findByEmail(User user);

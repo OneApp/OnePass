@@ -16,7 +16,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 	}
 	
 	/**
-	 * 通过高级管理员的账号进行登录
+	 * 高级管理员通过账号进行登录
 	 */
 	@Override
 	public Admin findByAdminName(Admin admin) {
@@ -26,7 +26,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 	}
 
 	/**
-	 * 通过高级管理员的邮箱账号进行登录
+	 * 高级管理员通过邮箱账号进行登录
 	 */
 	@Override
 	public Admin findByEmail(Admin admin) {
@@ -36,7 +36,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 	}
 
 	/**
-	 * 通过高级管理员的手机号进行登录
+	 * 高级管理员通过手机号进行登录
 	 */
 	@Override
 	public Admin findByPhone(Admin admin) {
