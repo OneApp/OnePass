@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table
 public class Admin {
@@ -14,7 +15,7 @@ public class Admin {
 	@Column
     private String adminName;
 	@Column
-	private String adminPasswprd;
+	private String adminPassword;
 	@Column
 	private boolean adminJurisdiction;
 	@Column
@@ -33,11 +34,11 @@ public class Admin {
 	public void setAdminName(String adminName) {
 		this.adminName = adminName;
 	}
-	public String getAdminPasswprd() {
-		return adminPasswprd;
+	public String getAdminPassword() {
+		return adminPassword;
 	}
-	public void setAdminPasswprd(String adminPasswprd) {
-		this.adminPasswprd = adminPasswprd;
+	public void setAdminPassword(String adminPassword) {
+		this.adminPassword = adminPassword;
 	}
 	public boolean isAdminJurisdiction() {
 		return adminJurisdiction;

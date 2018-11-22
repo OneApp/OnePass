@@ -1,6 +1,8 @@
 package com.example.service.impl;
 
-import com.example.service.User;
+
+import com.example.dao.UserDAO;
+import com.example.pojo.entity.User;
 import com.example.service.UserService;
 
 /**
@@ -11,9 +13,13 @@ import com.example.service.UserService;
 
 public class UserServiceImpl implements UserService {
     
-	private UserDao userDao;
+	private UserDAO userDao;
 	
+	public void setUserDao(UserDAO userDao) {
+		this.userDao = userDao;
+	}
 	/**
+	 * @author 胡龙
 	 * @param user 用户信息
 	 */
 	//用户注册
@@ -27,11 +33,14 @@ public class UserServiceImpl implements UserService {
 		userDao.save(u);
 		
 	}
-
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	/**
+	 * @author 严子江
+	 */
+	@Override
+	public User login(User user) {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 	
-	
-
 }
