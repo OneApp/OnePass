@@ -12,7 +12,6 @@ public class UserDAOImpl implements UserDAO {
 	public void setHibernateTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
-
     
 	 /**
      * 通过用户名进行登录
