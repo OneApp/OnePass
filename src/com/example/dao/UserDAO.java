@@ -2,13 +2,18 @@ package com.example.dao;
 
 import java.util.List;
 
+import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
-
+ 
 public interface UserDAO {
 	List<User> findAllUser(int start ,int length);
-	boolean login(User user);
+	User findUser(User user);
+	User loginByUsername(User user);
+	User loginByEmail(User user);
+	User loginByPhone(User user);
 	void register(User user);
-	void findFirstPrivacy(int id);
-	void findSecondPrivacy(int id);
-	void updatePrivacy(int id);
+	User findFirstPrivacy(User user);
+	User findSecondPrivacy(User user);
+	void updatePrivacy(User user);
+	void updatePassword(User user,String rePassword);
 }
