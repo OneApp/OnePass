@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 		smm.setText(msg);
 		smm.setTo(user.getUserName());
 		mailsend.send(smm);
-		ActionContext.getContext().put("vCode", vCode);		
+		ActionContext.getContext().getSession().put("vCode", vCode);		
 	}
 	/**
 	 * @author 胡龙
