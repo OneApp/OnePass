@@ -18,7 +18,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	
     /**
      * @author 陈文权
-     * 通过普通管理员账号进行登录
+     * 普通管理员通过账号进行登录
      */
 	@Override
 	public Admin findByAdminName(Admin admin) {
@@ -28,6 +28,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * 通过普通管理员邮箱账号进行登录
 =======
 	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
@@ -39,6 +40,9 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * @see com.example.dao.GeneralAdminDAO#login(com.example.pojo.entity.Admin)
 	 * ��ͨ����Ա��¼
 >>>>>>> refs/remotes/origin/master
+=======
+	 * 普通管理员通过邮箱账号进行登录
+>>>>>>> refs/remotes/origin/yanzijiang
 	 */
 	@Override
 	public Admin findByEmail(Admin admin) {
@@ -48,7 +52,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	}
 
 	/**
-	 * 通过普通管理员手机号进行登录
+	 * 普通管理员通过手机号进行登录
 	 */
 	@Override
 	public Admin findByPhone(Admin admin) {
