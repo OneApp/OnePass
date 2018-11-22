@@ -31,5 +31,5 @@ public interface UserService {
 	 * @return 验证码
 	 */
 	//用户点击注册前发送验证码邮件
-	public void sendVCode(User user);
+	public String sendVCode(User user);
 }

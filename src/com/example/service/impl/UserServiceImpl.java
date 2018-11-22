@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	//用户点击注册前发送邮件验证验证码
 	@Override
-	public void sendVCode(User user) {
+	public String sendVCode(User user) {
 		//调用userDao根据注册的登录名获得用户对象
 		User exitU = userDao.findByUsername(user);
 		if(exitU != null) {
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 		smm.setText(msg);
 		smm.setTo(user.getUserName());
 		mailsend.send(smm);
-		ActionContext.getContext().getSession().put("vCode", vCode);		
+		return vCode;		
 	}
 	/**
 	 * @author 胡龙

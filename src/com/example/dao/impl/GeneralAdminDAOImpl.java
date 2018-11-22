@@ -11,7 +11,7 @@ import com.example.pojo.entity.User;
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	private HibernateTemplate hTemplate;
 	
-<<<<<<< HEAD
+	//<<<<<<< HEAD
 	public void setHibernateTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
@@ -38,7 +38,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	/*
 	 * (non-Javadoc)
 	 * @see com.example.dao.GeneralAdminDAO#login(com.example.pojo.entity.Admin)
-	 * ��ͨ����Ա��¼
+	 * ��ͨ����Ա��¼
 >>>>>>> refs/remotes/origin/master
 =======
 	 * 普通管理员通过邮箱账号进行登录
