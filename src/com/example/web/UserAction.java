@@ -3,6 +3,7 @@ import java.util.List;
 
 import com.example.pojo.entity.User;
 import com.example.service.UserService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 /**
@@ -25,10 +26,11 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return 返回“匹配成功！”  登陆成功   否则 登陆失败
 	 */
 	public String login() {
-		if(userService.login(user)=="匹配成功!") {
+		User realUser=userService.login(user);
+		if(realUser!=null) {
+			ActionContext.getContext().getSession().put("user", realUser);
 			 return "Login";       //如果为true,登陆成功
-		}
-		else {
+		}else {
 			return "login_error";  //如果不是true，登陆失败
 		}
 	}
