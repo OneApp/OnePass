@@ -16,6 +16,7 @@ public class TestAction extends ActionSupport {
 	public String getUser() {
 		// TODO Auto-generated method stub
 		return null;
+
 	}
 
 }
