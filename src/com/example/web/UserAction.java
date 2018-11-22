@@ -16,7 +16,7 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	}
 	private UserService userService;
 	
-	public void setTestService(UserService userService) {
+	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 	/**
