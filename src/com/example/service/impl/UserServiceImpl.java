@@ -35,12 +35,22 @@ public class UserServiceImpl implements UserService {
 	}
 	/**
 	 * @author 严子江
+	 * @param user Action封装页面用户输入的信息
+	 * @return	根据用户登录的不同方式调用dao不同的方法返回user对象
 	 */
 	@Override
 	public User login(User user) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		if(user.getUserEmail()!=null) {
+			return userDao.findByEmail(user);
+		}
+		if(user.getUserPhone()!=null) {
+			return userDao.findByPhone(user);
+		}
+		if(user.getUserName()!=null) {
+			return userDao.findByUsername(user);
+		}
+		return null; 
 	}
 	
 }
