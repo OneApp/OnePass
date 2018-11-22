@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void sendVCode(User user) {
 		//调用userDao根据注册的登录名获得用户对象
-		User exitU = userDao.getByUserName(user.getUserName());
+		User exitU = userDao.findByUsername(user);
 		if(exitU != null) {
 			throw new RuntimeException("用户名已经存在!");
 		}
