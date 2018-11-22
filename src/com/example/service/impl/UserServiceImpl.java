@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void registerByEmail(User user,String vCode) {
 	    if(vCode != null) {
-	    	String vCode1 = (String) ActionContext.getContext().get("vCode");
+	    	String vCode1 = (String) ActionContext.getContext().getSession().get("vCode");
 	    	if(!vCode.equals(vCode1)) {
 	    		userDao.addUser(user);
 	    	}else {
