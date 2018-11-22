@@ -7,5 +7,6 @@
 		
 	<bean id="userService" class="com.example.service.impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"></property>
+		<property name="mailsend" ref="mailSender"></property>
 	</bean>		
 </beans>
