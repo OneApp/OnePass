@@ -47,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 	 * 用户注册
 	 */
 	@Override
-	public void register(User user) {
+	public void addUser(User user) {
 		 this.hTemplate.save(user);
 	}
 	

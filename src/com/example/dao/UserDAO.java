@@ -6,7 +6,7 @@ public interface UserDAO {
 	User findByUsername(User user);
 	User findByEmail(User user);
 	User findByPhone(User user);
-	void register(User user);
+	void addUser(User user);
 	User findFirstPrivacy(User user);
 	User findSecondPrivacy(User user);
 	void updatePrivacy(User user);
