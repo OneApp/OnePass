@@ -17,7 +17,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	
     /**
      * @author 陈文权
-     * 通过普通管理员账号进行登录
+     * 普通管理员通过账号进行登录
      */
 	@Override
 	public Admin findByAdminName(Admin admin) {
@@ -27,7 +27,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	}
 
 	/**
-	 * 通过普通管理员邮箱账号进行登录
+	 * 普通管理员通过邮箱账号进行登录
 	 */
 	@Override
 	public Admin findByEmail(Admin admin) {
@@ -37,7 +37,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	}
 
 	/**
-	 * 通过普通管理员手机号进行登录
+	 * 普通管理员通过手机号进行登录
 	 */
 	@Override
 	public Admin findByPhone(Admin admin) {

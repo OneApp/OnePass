@@ -12,35 +12,34 @@ public class UserDAOImpl implements UserDAO {
 	public void setHibernateTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
-
     
 	 /**
-     * 通过用户名进行登录
+     * 用户通过账号进行登录
      */
 	@Override
 	public User findByUsername(User user) {
-		String hql="from User where userName=? and userPassword=?";
-		User u=(User) this.hTemplate.find(hql, user.getUserName(),user.getUserPassword());
+		String hql="from User where userName=?";
+		User u=(User) this.hTemplate.find(hql, user.getUserName());
 		return u;
 	}
 	
 	/**
-	 * 通过邮箱账号进行登录
+	 * 用户通过邮箱账号进行登录
 	 */
 	@Override
 	public User findByEmail(User user) {
-		String hql="from User where userEmail=? and userPassword=?";
-		User u=(User) this.hTemplate.find(hql, user.getUserEmail(),user.getUserPassword());
+		String hql="from User where userEmail=?";
+		User u=(User) this.hTemplate.find(hql, user.getUserEmail());
 		return u;
 	}
 	
     /**
-     * 通过手机号进行登录
+     * 用户通过手机号进行登录
      */
 	@Override
 	public User findByPhone(User user) {
 		String hql="from User where userPhone=? ";
-		User u=(User) this.hTemplate.find(hql, user.getUserPhone(),user.getUserPassword());
+		User u=(User) this.hTemplate.find(hql, user.getUserPhone());
 		return u;
 	}
 	
@@ -48,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 	 * 用户注册
 	 */
 	@Override
-	public void register(User user) {
+	public void addUser(User user) {
 		 this.hTemplate.save(user);
 	}
 	
@@ -70,7 +69,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
     /**
-     *通过传过来的用户信息及最新密码来更改用户密码
+     *用户更新密码
      */   
 	@Override
 	public void updatePassword(User user, String rePassword) {

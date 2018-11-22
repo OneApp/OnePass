@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
-
+ 
 public interface SeniorAdminDAO {
     Admin findByAdminName(Admin admin);
 	Admin findByEmail(Admin admin);
