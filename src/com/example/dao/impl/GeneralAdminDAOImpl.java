@@ -11,49 +11,57 @@ import com.example.pojo.entity.User;
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	private HibernateTemplate hTemplate;
 	
+<<<<<<< HEAD
 	public void setHibernateTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
 	
-    /*
-     * (non-Javadoc)
-     * @see com.example.dao.GeneralAdminDAO#loginByAdminName(com.example.pojo.entity.Admin)
-     * 通过高级管理员的账号进行登录
+    /**
+     * @author 陈文权
+     * 普通管理员通过账号进行登录
      */
 	@Override
-	public Admin loginByAdminName(Admin admin) {
+	public Admin findByAdminName(Admin admin) {
 		String hql="from Admin where adminName=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminName(),admin.getAdminPassword(),true);
 		return a;
 	}
 
-	 /*
-     * (non-Javadoc)
-     * @see com.example.dao.GeneralAdminDAO#loginByEmail(com.example.pojo.entity.Admin)
-     * 通过高级管理员的邮箱账号进行登录
-     */
+	/**
+<<<<<<< HEAD
+	 * 通过普通管理员邮箱账号进行登录
+=======
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}  
+	    
+	/*
+	 * (non-Javadoc)
+	 * @see com.example.dao.GeneralAdminDAO#login(com.example.pojo.entity.Admin)
+	 * ��ͨ����Ա��¼
+>>>>>>> refs/remotes/origin/master
+=======
+	 * 普通管理员通过邮箱账号进行登录
+>>>>>>> refs/remotes/origin/yanzijiang
+	 */
 	@Override
-	public Admin loginByEmail(Admin admin) {
+	public Admin findByEmail(Admin admin) {
 		String hql="from Admin where adminEmail=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminEmail(),admin.getAdminPassword(),true);
 		return a;
 	}
 
-	 /*
-     * (non-Javadoc)
-     * @see com.example.dao.GeneralAdminDAO#loginByPhone(com.example.pojo.entity.Admin)
-     * 通过高级管理员手机号进行登录
-     */
+	/**
+	 * 普通管理员通过手机号进行登录
+	 */
 	@Override
-	public Admin loginByPhone(Admin admin) {
+	public Admin findByPhone(Admin admin) {
 		String hql="from Admin where adminPhone=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminPhone(),admin.getAdminPassword(),true);
 		return a;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.GeneralAdminDAO#findAllUser()
+	/**
 	 * 查看所有用户
 	 */
 	@Override
@@ -63,9 +71,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 		   return allUser;
 	}
 
-	 /*
-     * (non-Javadoc)
-     * @see com.example.dao.GeneralAdminDAO#updatePassword(com.example.pojo.entity.Admin)
+	/**
      * 更新密码
      */
 	@Override
@@ -74,7 +80,4 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
            a.setAdminPassword(rePassword);
            this.hTemplate.update(a);
 	}
-
-	
-
 }

@@ -15,45 +15,37 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 		this.hTemplate = hTemplate;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#loginByAdminName(com.example.pojo.entity.Admin)
-	 * 通过高级管理员的账号进行登录
+	/**
+	 * 高级管理员通过账号进行登录
 	 */
 	@Override
-	public Admin loginByAdminName(Admin admin) {
+	public Admin findByAdminName(Admin admin) {
 		String hql="from Admin where adminName=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminName(),admin.getAdminPassword(),true);
 		return a;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#loginByEmail(com.example.pojo.entity.Admin)
-	 * 通过高级管理员的邮箱账号进行登录
+	/**
+	 * 高级管理员通过邮箱账号进行登录
 	 */
 	@Override
-	public Admin loginByEmail(Admin admin) {
+	public Admin findByEmail(Admin admin) {
 		String hql="from Admin where adminEmail=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminEmail(),admin.getAdminPassword(),true);
 		return a;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#loginByPhone(com.example.pojo.entity.Admin)
-	 * 通过高级管理员的手机号进行登录
+	/**
+	 * 高级管理员通过手机号进行登录
 	 */
 	@Override
-	public Admin loginByPhone(Admin admin) {
+	public Admin findByPhone(Admin admin) {
 		String hql="from Admin where adminPhone=? and adminPassword=? and adminJurisdiction=?";
 		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminPhone(),admin.getAdminPassword(),true);
 		return a;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#findAllUser()
+	/**
 	 * 查看所有用户
 	 */
 	@Override
@@ -63,9 +55,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 		   return allUser;
 	}
 	
-    /*
-     * (non-Javadoc)
-     * @see com.example.dao.SeniorAdminDAO#updatePassword(com.example.pojo.entity.Admin, java.lang.String)
+    /**
      * 更新密码
      */
 	@Override
@@ -75,9 +65,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 		this.hTemplate.update(a);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#addGeneralAdmin(com.example.pojo.entity.Admin)
+	/**
 	 * 添加普通管理员
 	 */
 	@Override
@@ -86,9 +74,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 		return admin;
 	}  
     
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#deleteGeneralAdmin(com.example.pojo.entity.Admin)
+	/**
 	 * 删除普通管理员
 	 */
 	@Override
@@ -97,9 +83,7 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
         this.hTemplate.delete(a);
 	}
     
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#findAllGeneralAdmin(com.example.pojo.entity.Admin)
+	/**
 	 * 查看所有普通管理员
 	 */
 	@Override
@@ -109,14 +93,12 @@ public class SeniorAdminDAOImpl implements SeniorAdminDAO {
 		   return generalAdmin;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.example.dao.SeniorAdminDAO#findGeneralAdmin(com.example.pojo.entity.Admin)
+	/**
 	 * 查看单个管理员
 	 */
 	@Override
 	public Admin findGeneralAdmin(Admin admin) {
-		   String hql="from Admin where adminId=？";
+		   String hql="from Admin where adminId=?";
 		   Admin a=(Admin)this.hTemplate.find(hql, admin.getAdminId());
 		   return a;
 	}
