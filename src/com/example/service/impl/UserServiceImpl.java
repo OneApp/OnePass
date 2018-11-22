@@ -67,10 +67,7 @@ public class UserServiceImpl implements UserService {
 	    		throw new RuntimeException("验证码错误!");
 	    	}
 	    }
-		
-		
-	
-		
+				
 	}
 	/**
 	 * @author 严子江
