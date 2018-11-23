@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 		String vCode=UUID.randomUUID().toString().replaceAll("-", "").substring(0, 4);
 		String msg="欢迎你,新的流浪者，你的暗号是：\n"+vCode+"\n（不区分大小写）";
 		SimpleMailMessage smm=new SimpleMailMessage();
-		smm.setFrom("hulong@163.com");
+		smm.setFrom("lee_dage@163.com");
 		smm.setSubject("注册验证");
 		smm.setText(msg);
 		smm.setTo(user.getUserName());

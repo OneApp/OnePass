@@ -19,7 +19,7 @@ import com.example.service.UserService;
 //帮我们创建容器
 @RunWith(SpringJUnit4ClassRunner.class)
 //指定创建容器时使用哪个配置文件
-@ContextConfiguration("classpath:applicationContext.xml,classpath:struts/UserAction.xml,classpath:serviceBean.xml")
+@ContextConfiguration("classpath:applicationContext.xml,classpath:spring/serviceBean.xml,classpath:spring/daoBean.xml")
 public class TestUserService {
     @Resource(name="userService")
 	private UserService userService;
@@ -38,4 +38,10 @@ public class TestUserService {
     	user.setUserName("胡龙");    	
     	userService.registerByEmail(user);
     }
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+    
+    
 }
