@@ -17,5 +17,7 @@ public class TestServiceImpl implements TestService {
 	public List<TestUser> getAll() {
 		return testDAO.getAll();
 	}
+	
+	
 
 }

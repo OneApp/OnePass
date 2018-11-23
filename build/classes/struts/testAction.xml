@@ -5,11 +5,7 @@
 <struts>
 	<!-- struts-default.xml在Struts2的核心包内 -->
 	
-<<<<<<< HEAD
 	<package name="main" extends="default" namespace="/">    
-=======
-	<package name="main" extends="default" namespace="/">
->>>>>>> refs/remotes/origin/master
 		<!-- 配置loginAction的login方法为一个Action -->
 		<action name="*UserAction" class="testAction" method="{1}">
 			<!-- action的返回的结果页面 -->
