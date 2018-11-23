@@ -23,7 +23,7 @@ public interface UserService {
 	 * @param vCode 验证码
 	 */
 	//用户注册
-	public void registerByEmail(User user, String vCode);
+	public void registerByEmail(User user);
 	
 	/**
 	 * 
@@ -32,4 +32,6 @@ public interface UserService {
 	 */
 	//用户点击注册前发送验证码邮件
 	public String sendVCode(User user);
+
+	
 }

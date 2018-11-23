@@ -52,26 +52,7 @@ public class UserServiceImpl implements UserService {
 		mailsend.send(smm);
 		return vCode;		
 	}
-	/**
-	 * @author 胡龙
-	 * @param user 用户信息
-	 */
-	//用户注册
-	@Override
-	public void registerByEmail(User user,String vCode) {
-	    if(vCode != null) {
-	    	String vCode1 = (String) ActionContext.getContext().getSession().get("vCode");
-	    	if(!vCode.equals(vCode1)) {
-	    		userDao.addUser(user);
-	    	}else {
-	    		throw new RuntimeException("验证码错误!");
-	    	}
-	    }
-		
-		
 	
-		
-	}
 	/**
 	 * @author 严子江
 	 * @param user Action封装页面用户输入的信息
@@ -91,5 +72,15 @@ public class UserServiceImpl implements UserService {
 		}
 		return null; 
 	}
-	
+
+	/**
+	 * @author 胡龙
+	 * @param user 用户信息
+	 */
+	//用户注册
+	@Override
+	public void registerByEmail(User user) {
+		userDao.addUser(user);
+		
+	}				
 }
