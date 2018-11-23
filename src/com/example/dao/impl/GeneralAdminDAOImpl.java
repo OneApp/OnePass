@@ -22,8 +22,11 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	@Override
 	public Admin findByAdminName(Admin admin) {
 		String hql="from Admin where adminName=? and adminPassword=? and adminJurisdiction=?";
-		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminName(),admin.getAdminPassword(),true);
-		return a;
+		List<Admin> list=(List<Admin>) this.hTemplate.find(hql, admin.getAdminName(),admin.getAdminPassword(),true);
+		if(list.size()>0)    
+			return list.get(0);
+		else
+		return null;
 	}
 
 	/**
@@ -32,8 +35,11 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	@Override
 	public Admin findByEmail(Admin admin) {
 		String hql="from Admin where adminEmail=? and adminPassword=? and adminJurisdiction=?";
-		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminEmail(),admin.getAdminPassword(),true);
-		return a;
+		List<Admin> list=(List<Admin>) this.hTemplate.find(hql, admin.getAdminEmail(),admin.getAdminPassword(),true);
+		if(list.size()>0)
+			return list.get(0);
+		else
+		return null;
 	}
 
 	/**
@@ -42,8 +48,11 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	@Override
 	public Admin findByPhone(Admin admin) {
 		String hql="from Admin where adminPhone=? and adminPassword=? and adminJurisdiction=?";
-		Admin a=(Admin) this.hTemplate.find(hql, admin.getAdminPhone(),admin.getAdminPassword(),true);
-		return a;
+		List<Admin> list=(List<Admin>) this.hTemplate.find(hql, admin.getAdminPhone(),admin.getAdminPassword(),true);
+		if(list.size()>0)
+			return list.get(0);
+		else
+		return null;
 	}
 	
 	/**

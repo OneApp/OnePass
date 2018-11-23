@@ -1,5 +1,7 @@
 package com.example.dao.impl;
 
+import java.util.List;
+
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.example.dao.UserDAO;
@@ -19,8 +21,11 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User findByUsername(User user) {
 		String hql="from User where userName=?";
-		User u=(User) this.hTemplate.find(hql, user.getUserName());
-		return u;
+		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserName());
+		if(list.size()>0)
+			return list.get(0);
+		else
+		return null;
 	}
 	
 	/**
@@ -29,8 +34,11 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User findByEmail(User user) {
 		String hql="from User where userEmail=?";
-		User u=(User) this.hTemplate.find(hql, user.getUserEmail());
-		return u;
+		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserEmail());
+		if(list.size()>0)
+			return list.get(0);
+		else
+		return null;
 	}
 	
     /**
@@ -39,8 +47,11 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User findByPhone(User user) {
 		String hql="from User where userPhone=? ";
-		User u=(User) this.hTemplate.find(hql, user.getUserPhone());
-		return u;
+		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserPhone());
+		if(list.size()>0)
+			return list.get(0);
+		else
+		return null;
 	}
 	
 	/**
