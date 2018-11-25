@@ -1,9 +1,7 @@
 package com.example.web;
-
-import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.StrutsSpringTestCase;
 import org.apache.struts2.dispatcher.mapper.ActionMapping;
-
+import org.junit.Test;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
@@ -11,41 +9,46 @@ import com.opensymphony.xwork2.ActionProxy;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 public class Juint  extends StrutsSpringTestCase  {
 
-	public void testGetActionMapping() {
-        ActionMapping mapping = getActionMapping("user_login");
-        assertNotNull(mapping);
-        assertEquals("/", mapping.getNamespace());
-        assertEquals("user_login", mapping.getName());//主界面登陆进来要传的现在还不知道
-    }
+//	public void testGetActionMapping() {
+//        ActionMapping mapping = getActionMapping("/user_login");
+//        assertNotNull(mapping);
+//        System.out.println("-------------------------------------------"+mapping.getName());
+//        assertEquals("/", mapping.getNamespace());
+//        assertEquals("user_login", mapping.getName());
+//    }
+	@Test
 	 public void testGetActionProxy() throws Exception {
-	        //set parameters before calling getActionProxy
-		    HttpServletRequest request = ServletActionContext.getRequest();
-	       request.setAttribute("name", "FD");  
-	        ActionProxy proxy = getActionProxy("user_login");
+	        //set parameters before calling getActionProxuy
+			
+		    request.setParameter("userId", "123");  
+		    request.setParameter("userPassword", "123");
+	        ActionProxy proxy =getActionProxy("/user_login");
+	        System.out.println("66666666666666666666666666666666----------------------");
 	        assertNotNull(proxy);
-
-	        TestAction action = (TestAction) proxy.getAction();
+	        System.out.println("66666666666666666666666666666666----------------------");
+	        UserAction action = (UserAction) proxy.getAction();
+	        System.out.println("6666666666666666666666666666666666"+action);
 	        assertNotNull(action);
-
 	        String result = proxy.execute();
-	        assertEquals(Action.SUCCESS, result);
-	        assertEquals("FD", action.getUser());
+	        System.out.println("6666666666666666666666666666666666"+result);
+	        assertEquals(Action.LOGIN,result);
+	      /*  assertEquals("123",);*/
 	    }
 
-	    public void testExecuteAction() throws ServletException, UnsupportedEncodingException {
-	        String output = executeAction("/user_login.action");
-	        assertEquals("Hello", output);
-	    }
-
-	    public void testGetValueFromStack() throws ServletException, UnsupportedEncodingException {
-	        request.setParameter("name", "FD");
-	        executeAction("/user_login.action");
-	        String name = (String) findValueAfterExecute("name");
-	        assertEquals("FD", name);
-	    }
+//	    public void testExecuteAction() throws ServletException, UnsupportedEncodingException {
+//	        String output = executeAction("/user/user_login");
+//	        assertEquals("login", output);
+//	    }
+//
+//	    public void testGetValueFromStack() throws ServletException, UnsupportedEncodingException {
+//	        request.setParameter("name", "FD");
+//	        executeAction("/user_login.action");
+//	        String name = (String) findValueAfterExecute("name");
+//	        assertEquals("FD", name);
+//	    }
+		
 /**
  * 
  */
