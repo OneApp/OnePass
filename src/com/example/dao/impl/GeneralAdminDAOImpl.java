@@ -10,7 +10,6 @@ import com.example.pojo.entity.User;
  
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	private HibernateTemplate hibernateTemplat;
-	
 	public void setHibernateTemplat(HibernateTemplate hibernateTemplat) {
 		this.hibernateTemplat = hibernateTemplat;
 	}
@@ -20,7 +19,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * @author 陈文权
 	 * @param admin 从service传递过来的含name的admin参数
 	 * @return 返回admin对象或null
-	 */
+    */
 	@Override
 	public Admin findByAdminName(Admin admin) {
 		String hql="from Admin where adminName=? and adminPassword=? and adminJurisdiction=?";
@@ -62,7 +61,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * 普通管理员查看所有用户
 	 * @return 返回User对象List集合
 	 */
-	@Override
+	@Override 
 	public List<User> findAllUser() {
 		   String hql="from User";
 		   List<User> allUser=(List<User>) this.hibernateTemplat.find(hql);
