@@ -9,85 +9,129 @@ import com.example.pojo.entity.User;
 
 public class UserDAOImpl implements UserDAO {
     
-	private HibernateTemplate hTemplate;
-
-	public void setHibernateTemplate(HibernateTemplate hTemplate) {
-		this.hTemplate = hTemplate;
+	private HibernateTemplate hibernateTemplate;
+	 public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
 	}
-    
-	 /**
-     * 用户通过账号进行登录
-     */
+	/**
+	* 用户通过账号进行登录
+	* @author 陈文权 
+	* @param user 从service传递过来的含name的user参数
+	* @return 返回user对象或null
+	*/
 	@Override
 	public User findByUsername(User user) {
 		String hql="from User where userName=?";
-		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserName());
+		List<User> list= (List<User>) this.hibernateTemplate.find(hql, user.getUserName());
 		if(list.size()>0)
 			return list.get(0);
 		else
 		return null;
 	}
-	
 	/**
-	 * 用户通过邮箱账号进行登录
+	 * 用户通过邮箱进行登录
+	 * @param user 从service传递过来的含email的user参数
+	 * @return 返回user对象或null
 	 */
 	@Override
 	public User findByEmail(User user) {
 		String hql="from User where userEmail=?";
-		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserEmail());
+		List<User> list= (List<User>) this.hibernateTemplate.find(hql, user.getUserEmail());
 		if(list.size()>0)
 			return list.get(0);
 		else
 		return null;
 	}
-	
-    /**
-     * 用户通过手机号进行登录
-     */
+	/**
+	 * 用户通过手机号进行登录
+	 * @param user 从service传递过来的含phone的user参数
+	 * @return 返回user对象或null
+	 */
 	@Override
 	public User findByPhone(User user) {
 		String hql="from User where userPhone=? ";
-		List<User> list= (List<User>) this.hTemplate.find(hql, user.getUserPhone());
+		List<User> list= (List<User>) this.hibernateTemplate.find(hql, user.getUserPhone());
 		if(list.size()>0)
 			return list.get(0);
 		else
 		return null;
 	}
-	
 	/**
 	 * 用户注册
+	 * @param user 从service传递过来的user参数
 	 */
 	@Override
 	public void addUser(User user) {
-		 this.hTemplate.save(user);
+		 this.hibernateTemplate.save(user);
 	}
-	
+	/**
+	 * 用户查看一级隐私内容
+	 * @param user 从service传递过来的user参数
+	 * @return 返回用户的一级隐私信息
+	 */
 	@Override
 	public User findFirstPrivacy(User user) {
 		
 		return user;
 	}
-
+	/**
+	 * 用户查看二级隐私内容
+	 * @param user 从service传递过来的user参数
+	 * @return 返回用户的二级隐私信息
+	 */
 	@Override
 	public User findSecondPrivacy(User user) {
 		
 		return user;
 	}
-
+	/**
+	 * 用户查看三级隐私内容
+	 * @param user 从service传递过来的user参数
+	 * @return 返回用户的三级隐私信息
+	 */
 	@Override
-	public void updatePrivacy(User user) {
+	public User findThirdPrivacy(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/**
+	 * 用户更改一级隐私内容
+	 * @param user 从service传递过来的user参数
+	 */
+	@Override
+	public void updateFirstPrivacy(User user) {
 
 	}
-	
-    /**
-     *用户更新密码
-     */   
+	/**
+	 * 用户更改二级隐私内容
+	 * @param user 从service传递过来的user参数
+	 */
+	@Override
+	public void updateSecondPrivacy(User user) {
+		
+	}
+	/**
+	 * 用户更改三级隐私内容
+	 * @param user 从service传递过来的user参数
+	 */
+	@Override
+	public void updateThirdPrivacy(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+	/**
+	 * 用户更改密码
+	 * @param user 从service传递过来的user参数
+	 * @param rePassword 从service传递过来的新密码的参数
+	 */
 	@Override
 	public void updatePassword(User user, String rePassword) {
-		User u=this.hTemplate.get(User.class, user.getUserId());
+		User u=this.hibernateTemplate.get(User.class, user.getUserId());
 		u.setUserPassword(rePassword);
-		this.hTemplate.update(u);
+		this.hibernateTemplate.update(u);
 	}
+
+
 	
 	
 }
