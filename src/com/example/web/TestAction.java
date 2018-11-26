@@ -11,8 +11,8 @@ public class TestAction extends ActionSupport {
 	
 	public void setTestService(TestService testService) {
 		this.testService = testService;
-	}
-
+	}  
+    
 	public String getUser() {
 		// TODO Auto-generated method stub
 		return null;
