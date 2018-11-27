@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.pojo.entity.User;
+import com.example.pojo.entity.UserOther;
   
 public interface UserDAO {
 	/**
@@ -38,13 +39,13 @@ public interface UserDAO {
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的二级隐私信息
 	 */
-	User findSecondPrivacy(User user);
+	UserOther findSecondPrivacy(UserOther userOther);
 	/**
 	 * 用户查看三级隐私内容
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的三级隐私信息
 	 */
-	User findThirdPrivacy(User user);
+	User findThirdPrivacy(UserOther userOther,User user);
 	/**
 	 * 用户更改一级隐私内容
 	 * @param user 从service传递过来的user参数
@@ -54,12 +55,12 @@ public interface UserDAO {
 	 * 用户更改二级隐私内容
 	 * @param user 从service传递过来的user参数
 	 */
-	void updateSecondPrivacy(User user);
+	void updateSecondPrivacy(UserOther userOther);
 	/**
 	 * 用户更改三级隐私内容
 	 * @param user 从service传递过来的user参数
 	 */
-	void updateThirdPrivacy(User user);
+	void updateThirdPrivacy(UserOther userOther,User user);
 	/**
 	 * 用户更改密码
 	 * @param user 从service传递过来的user参数

@@ -20,6 +20,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * @param admin 从service传递过来的含name的admin参数
 	 * @return 返回admin对象或null
     */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Admin findByAdminName(Admin admin) {
 		String hql="from Admin where adminName=? and adminPassword=? and adminJurisdiction=?";
@@ -34,6 +35,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * @param admin 从service传递过来的含email的admin参数
 	 * @return 返回admin对象或null
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Admin findByEmail(Admin admin) {
 		String hql="from Admin where adminEmail=? and adminPassword=? and adminJurisdiction=?";
@@ -48,6 +50,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * @param admin 从service传递过来的含phone的admin参数
 	 * @return 返回admin对象或null
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Admin findByPhone(Admin admin) {
 		String hql="from Admin where adminPhone=? and adminPassword=? and adminJurisdiction=?";
@@ -61,6 +64,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	 * 普通管理员查看所有用户
 	 * @return 返回User对象List集合
 	 */
+	@SuppressWarnings("unchecked")
 	@Override 
 	public List<User> findAllUser() {
 		   String hql="from User";
