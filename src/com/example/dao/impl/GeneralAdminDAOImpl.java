@@ -9,17 +9,9 @@ import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
  
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
-<<<<<<< HEAD
-	private HibernateTemplate hTemplate;
-	
-	//<<<<<<< HEAD
-	public void setHibernateTemplate(HibernateTemplate hTemplate) {
-		this.hTemplate = hTemplate;
-=======
 	private HibernateTemplate hibernateTemplat;
 	public void setHibernateTemplat(HibernateTemplate hibernateTemplat) {
 		this.hibernateTemplat = hibernateTemplat;
->>>>>>> refs/remotes/origin/chenwenquan
 	}
 	
 	/**
