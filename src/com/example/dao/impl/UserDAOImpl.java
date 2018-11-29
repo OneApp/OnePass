@@ -14,10 +14,13 @@ public class UserDAOImpl implements UserDAO{
 	public void setHTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
-
 	/**
-     * 用户通过账号进行登录
-     */
+	* 用户通过账号进行登录
+	* @author 陈文权 
+	* @param user 从service传递过来的含name的user参数
+	* @return 返回user对象或null
+	*/
+	@SuppressWarnings("unchecked")
 	@Override
 	public User findByUsername(User user) {
 		String hql="from User where userName=?";

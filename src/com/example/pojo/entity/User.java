@@ -1,47 +1,23 @@
 package com.example.pojo.entity;
 
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-
-@Entity
-@Table
 public class User {
-	@Id
-	@Column
 	private Integer userId;
-	@Column
     private String userPhone;
-	@Column
     private String userEmail;
-	@Column
     private Date userCreateDate;
-	@Column
     private String userPassword;
-	@Column
     private String userPasswordTwo;
-	@Column
     private String userPasswordThree;
-	@Column
     private String userName;
-	@Column
     private String userHead;
-	@Column
     private Date userBirthday;
-	@Column
-    private boolean userBirthdayIsCalendar;
-	@Column
+	private boolean userBirthdayIsCalendar;
     private String userSign;
-	@Column
     private String userHobbies;
-	@Column
     private String userMajor;
-	@Column
     private Integer userHeight;
-	@Column
     private Integer userWeight;
     
 	public Integer getUserId() {
@@ -101,7 +77,7 @@ public class User {
 	public Date getUserBirthday() {
 		return userBirthday;
 	}
-	public void setUserBirthday(Date userBirthday) {
+    public void setUserBirthday(Date userBirthday) {
 		this.userBirthday = userBirthday;
 	}
 	public boolean isUserBirthdayIsCalendar() {
