@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
- 
+   
 public interface SeniorAdminDAO {
 	/**
 	 * 普通管理员通过账号进行登录

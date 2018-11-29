@@ -1,51 +1,24 @@
 package com.example.pojo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table
 public class UserOther {
-	@Id
-	@Column
     private Integer userOtherId;
-	@Column
     private Integer userId;
-	@Column
 	private String userCountry;
-	@Column
 	private String userNation;
-	@Column
 	private String userSex;
-	@Column
 	private boolean userSoldier;
-	@Column
 	private String userQQ;
-	@Column
 	private String userWeChat;
-	@Column
 	private String userPolitical;
-	@Column
 	private String userBloodType;
-	@Column
 	private String userEducation;
-	@Column
 	private boolean userMarried;
-	@Column
 	private String userIdPhoto;
-	@Column
 	private String userProfession;
-	@Column
 	private String userSalary;
-    @Column
 	private String userRealName;
-	@Column
 	private String userIdNumber;
-	@Column
 	private String userNationPlace;
-	@Column
 	private String userLocation;
 	public Integer getUserOtherId() {
 		return userOtherId;

@@ -6,11 +6,13 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.example.dao.UserDAO;
 import com.example.pojo.entity.User;
+import com.example.pojo.entity.UserOther;
 
 public class UserDAOImpl implements UserDAO {
     
 	private HibernateTemplate hibernateTemplate;
-	 public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+	
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 		this.hibernateTemplate = hibernateTemplate;
 	}
 	/**
@@ -19,6 +21,7 @@ public class UserDAOImpl implements UserDAO {
 	* @param user 从service传递过来的含name的user参数
 	* @return 返回user对象或null
 	*/
+	@SuppressWarnings("unchecked")
 	@Override
 	public User findByUsername(User user) {
 		String hql="from User where userName=?";
@@ -33,6 +36,7 @@ public class UserDAOImpl implements UserDAO {
 	 * @param user 从service传递过来的含email的user参数
 	 * @return 返回user对象或null
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public User findByEmail(User user) {
 		String hql="from User where userEmail=?";
@@ -47,6 +51,7 @@ public class UserDAOImpl implements UserDAO {
 	 * @param user 从service传递过来的含phone的user参数
 	 * @return 返回user对象或null
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public User findByPhone(User user) {
 		String hql="from User where userPhone=? ";
@@ -66,32 +71,33 @@ public class UserDAOImpl implements UserDAO {
 	}
 	/**
 	 * 用户查看一级隐私内容
+	 * 根据传过来user对象中属性值来查询，假设user里面含有userId值
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的一级隐私信息
 	 */
 	@Override
 	public User findFirstPrivacy(User user) {
-		
-		return user;
+		User u=this.hibernateTemplate.get(User.class, user.getUserId());
+		return u;
 	}
 	/**
 	 * 用户查看二级隐私内容
-	 * @param user 从service传递过来的user参数
+	 * 根据传过来userOther对象中属性值来查询，假设userOther里面含有userOtherId值
+	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的二级隐私信息
 	 */
 	@Override
-	public User findSecondPrivacy(User user) {
-		
-		return user;
+	public UserOther findSecondPrivacy(UserOther userOther) {
+		UserOther u=this.hibernateTemplate.get(UserOther.class, userOther.getUserOtherId());
+		return u;
 	}
 	/**
 	 * 用户查看三级隐私内容
-	 * @param user 从service传递过来的user参数
+	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的三级隐私信息
 	 */
 	@Override
-	public User findThirdPrivacy(User user) {
-		// TODO Auto-generated method stub
+	public User findThirdPrivacy(UserOther userOther,User user) {
 		return null;
 	}
 	/**
@@ -104,18 +110,18 @@ public class UserDAOImpl implements UserDAO {
 	}
 	/**
 	 * 用户更改二级隐私内容
-	 * @param user 从service传递过来的user参数
+	 * @param userOther 从service传递过来的userOther参数
 	 */
 	@Override
-	public void updateSecondPrivacy(User user) {
+	public void updateSecondPrivacy(UserOther userOther) {
 		
 	}
 	/**
 	 * 用户更改三级隐私内容
-	 * @param user 从service传递过来的user参数
+	 * @param userOther 从service传递过来的userOther参数
 	 */
 	@Override
-	public void updateThirdPrivacy(User user) {
+	public void updateThirdPrivacy(UserOther userOther,User user) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -130,8 +136,4 @@ public class UserDAOImpl implements UserDAO {
 		u.setUserPassword(rePassword);
 		this.hibernateTemplate.update(u);
 	}
-
-
-	
-	
 }
