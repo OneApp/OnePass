@@ -8,6 +8,7 @@ import org.springframework.mail.SimpleMailMessage;
 
 import com.example.dao.UserDAO;
 import com.example.pojo.entity.User;
+import com.example.pojo.entity.UserOther;
 import com.example.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -82,5 +83,23 @@ public class UserServiceImpl implements UserService {
 	public void registerByEmail(User user) {
 		userDao.addUser(user);
 		
+	}
+	/**
+	 * @author 严子江
+	 * @return 返回用户所有的二级隐私信息
+	 */
+	@Override
+	public UserOther getUserFirstPrivacy(User user) {
+		// TODO Auto-generated method stub
+		return userDao.findSecondPrivacy(user);
+	}
+	/**
+	 * @author 严子江
+	 * @return 返回用户所有的三级隐私信息
+	 */
+	@Override
+	public User getUserThirdPrivacy(User user) {
+		// TODO Auto-generated method stub
+		return userDao.findThirdPrivacy(user);
 	}				
 }

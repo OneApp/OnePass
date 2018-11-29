@@ -8,7 +8,11 @@ import com.example.dao.GeneralAdminDAO;
 import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
  
+
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
+
+
+
 	private HibernateTemplate hibernateTemplat;
 	public void setHibernateTemplat(HibernateTemplate hibernateTemplat) {
 		this.hibernateTemplat = hibernateTemplat;
@@ -30,28 +34,13 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 		else
 		return null;
 	}
-	/**
-<<<<<<< HEAD
-<<<<<<< HEAD
-	 * 通过普通管理员邮箱账号进行登录
-=======
-	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-		this.hibernateTemplate = hibernateTemplate;
-	}  
 	    
-	/*
+	/**
 	 * (non-Javadoc)
 	 * @see com.example.dao.GeneralAdminDAO#login(com.example.pojo.entity.Admin)
-	 * ��ͨ����Ա��¼
->>>>>>> refs/remotes/origin/master
-=======
 	 * 普通管理员通过邮箱账号进行登录
->>>>>>> refs/remotes/origin/yanzijiang
-=======
-	 * 普通管理员通过邮箱进行登录
 	 * @param admin 从service传递过来的含email的admin参数
 	 * @return 返回admin对象或null
->>>>>>> refs/remotes/origin/chenwenquan
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
