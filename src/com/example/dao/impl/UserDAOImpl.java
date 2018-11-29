@@ -3,19 +3,19 @@ package com.example.dao.impl;
 import java.util.List;
 
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.example.dao.UserDAO;
 import com.example.pojo.entity.User;
 
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements UserDAO{
     
 	private HibernateTemplate hTemplate;
-
-	public void setHibernateTemplate(HibernateTemplate hTemplate) {
+	public void setHTemplate(HibernateTemplate hTemplate) {
 		this.hTemplate = hTemplate;
 	}
-    
-	 /**
+
+	/**
      * 用户通过账号进行登录
      */
 	@Override
