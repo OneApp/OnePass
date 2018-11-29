@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.pojo.entity.User;
+import com.example.pojo.entity.UserOther;
 
 /**
  * 
@@ -33,5 +34,14 @@ public interface UserService {
 	//用户点击注册前发送验证码邮件
 	public String sendVCode(User user);
 
-	
+	/**
+	 * @author 严子江
+	 * @return 返回该用户所有的二级隐私信息
+	 */
+	public UserOther getUserFirstPrivacy(User user);
+	/**
+	 * @author 严子江
+	 * @return 返回该用户所有的三级隐私信息
+	 */
+	public User getUserThirdPrivacy(User user);
 }
