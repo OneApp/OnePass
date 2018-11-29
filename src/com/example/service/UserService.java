@@ -43,5 +43,5 @@ public interface UserService {
 	 * @author 严子江
 	 * @return 返回该用户所有的三级隐私信息
 	 */
-	public User getUserThirdPrivacy(User user);
+	public User getUserThirdPrivacy(User user); 
 }

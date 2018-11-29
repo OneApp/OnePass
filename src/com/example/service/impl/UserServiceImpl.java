@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserOther getUserSecondPrivacy(User user) {
 		// TODO Auto-generated method stub
-		return userDao.findSecondPrivacy(user);
+		return userDao.findSecondPrivacy(user); 
 	}
 	/**
 	 * @author 严子江
