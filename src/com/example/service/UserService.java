@@ -38,7 +38,7 @@ public interface UserService {
 	 * @author 严子江
 	 * @return 返回该用户所有的二级隐私信息
 	 */
-	public UserOther getUserFirstPrivacy(User user);
+	public UserOther getUserSecondPrivacy(User user);
 	/**
 	 * @author 严子江
 	 * @return 返回该用户所有的三级隐私信息
