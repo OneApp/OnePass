@@ -19,7 +19,14 @@ public class User {
     private String userMajor;
     private Integer userHeight;
     private Integer userWeight;
+    private UserOther userOther;
     
+	public UserOther getUserOther() {
+		return userOther;
+	}
+	public void setUserOther(UserOther userOther) {
+		this.userOther = userOther;
+	}
 	public Integer getUserId() {
 		return userId;
 	}
