@@ -61,5 +61,6 @@
         <property name="userLocation" type="java.lang.String">
             <column name="userLocation" />
         </property>
+        <many-to-one name="user" class="com.example.pojo.entity.User" column="userId" cascade="all" unique="true"></many-to-one>
     </class>
 </hibernate-mapping>

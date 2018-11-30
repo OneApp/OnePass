@@ -75,10 +75,15 @@ public class UserDAOImpl implements UserDAO {
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的一级隐私信息
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public User findFirstPrivacy(User user) {
-		User u=this.hibernateTemplate.get(User.class, user.getUserId());
-		return u;
+		String hql="select userName,userHead,userBirthday,userBirthdayIsCalendar,userSign,userHobbies,userMajor,userHeight,userWeight from User where userId=?";
+		List<User> list=(List<User>) this.hibernateTemplate.find(hql, user.getUserId());
+		if(list.size()>0) {
+			return list.get(0);
+		}else
+		return null;
 	}
 	/**
 	 * 用户查看二级隐私内容
@@ -86,18 +91,29 @@ public class UserDAOImpl implements UserDAO {
 	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的二级隐私信息
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public UserOther findSecondPrivacy(UserOther userOther) {
-		UserOther u=this.hibernateTemplate.get(UserOther.class, userOther.getUserOtherId());
-		return u;
+		String hql="select userCountry,userNation,userSex,userSoldier,userQQ,userWeChat,userPolitical,userBloodType,userEducation,userMarried,userIdPhoto,userProfession，userSalary from UserOther where userOtherId=?";
+		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, userOther.getUserOtherId());
+		if(list.size()>0) {
+			return list.get(0);
+		}else
+		return null;
 	}
 	/**
 	 * 用户查看三级隐私内容
 	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的三级隐私信息
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public User findThirdPrivacy(UserOther userOther,User user) {
+	public User findThirdPrivacy(User user) {
+		String hql="select userName,userPhone,userEmail,userOther from User where userId=?";
+		List<User> list=(List<User>) this.hibernateTemplate.find(hql, user.getUserId());
+		if(list.size()>0) {
+			return list.get(0);
+		}else
 		return null;
 	}
 	/**
@@ -121,7 +137,7 @@ public class UserDAOImpl implements UserDAO {
 	 * @param userOther 从service传递过来的userOther参数
 	 */
 	@Override
-	public void updateThirdPrivacy(UserOther userOther,User user) {
+	public void updateThirdPrivacy(User user) {
 		// TODO Auto-generated method stub
 		
 	}

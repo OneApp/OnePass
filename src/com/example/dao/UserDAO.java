@@ -1,5 +1,7 @@
 package com.example.dao;
 
+import java.util.List;
+
 import com.example.pojo.entity.User;
 import com.example.pojo.entity.UserOther;
   
@@ -45,7 +47,7 @@ public interface UserDAO {
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的三级隐私信息
 	 */
-	User findThirdPrivacy(UserOther userOther,User user);
+	User findThirdPrivacy(User user);
 	/**
 	 * 用户更改一级隐私内容
 	 * @param user 从service传递过来的user参数
@@ -60,7 +62,7 @@ public interface UserDAO {
 	 * 用户更改三级隐私内容
 	 * @param user 从service传递过来的user参数
 	 */
-	void updateThirdPrivacy(UserOther userOther,User user);
+	void updateThirdPrivacy(User user);
 	/**
 	 * 用户更改密码
 	 * @param user 从service传递过来的user参数
