@@ -1,14 +1,11 @@
-package com.example.web;
+package action;
 import org.apache.struts2.StrutsSpringTestCase;
-import org.apache.struts2.dispatcher.mapper.ActionMapping;
+
 import org.junit.Test;
 
+import com.example.web.UserAction;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
-
-import java.io.UnsupportedEncodingException;
-
-import javax.servlet.ServletException;
 public class Juint  extends StrutsSpringTestCase  {
 
 //	public void testGetActionMapping() {

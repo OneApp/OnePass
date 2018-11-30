@@ -8,6 +8,7 @@ import com.example.dao.GeneralAdminDAO;
 import com.example.pojo.entity.Admin;
 import com.example.pojo.entity.User;
  
+
 public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 
 

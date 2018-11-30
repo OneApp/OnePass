@@ -84,6 +84,9 @@ public class UserServiceImpl implements UserService {
 		userDao.addUser(user);
 		
 	}
+	
+	
+	
 	/**
 	 * @author 严子江
 	 * @return 返回用户所有的二级隐私信息
@@ -101,5 +104,14 @@ public class UserServiceImpl implements UserService {
 	public User getUserThirdPrivacy(User user) {
 		// TODO Auto-generated method stub
 		return userDao.findThirdPrivacy(user);
+	}
+	/**
+	 * @author 胡龙
+	 * @param user 用户信息
+ 	 * @return User 返回用户所有的一级隐私信息
+	 */
+	@Override
+	public User findFirstPrivacy(User user) {		
+		return userDao.findFirstPrivacy(user);
 	}				
 }
