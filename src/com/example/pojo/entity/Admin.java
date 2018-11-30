@@ -1,26 +1,12 @@
 package com.example.pojo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-
-@Entity
-@Table
 public class Admin {
-	@Id
-	@Column
     private Integer adminId;
-	@Column
     private String adminName;
-	@Column
 	private String adminPassword;
-	@Column
 	private boolean adminJurisdiction;
-	@Column
 	private String adminPhone;
-	@Column
 	private String adminEmail;
 	public Integer getAdminId() {
 		return adminId;
