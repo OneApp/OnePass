@@ -20,6 +20,14 @@ public class UserOther {
 	private String userIdNumber;
 	private String userNationPlace;
 	private String userLocation;
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getUserOtherId() {
 		return userOtherId;
 	}
