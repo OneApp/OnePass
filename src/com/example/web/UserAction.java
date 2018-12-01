@@ -78,6 +78,14 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 					return "code_error";
 				}	  
 	}
+	/**
+	 * @param   注册二级密码
+	 * @return second_rgted 注册二级密码成功
+	 */
+	public String second_rgt() {
+		  userService.
+		return second_rgted;  
+	}
 	
 	/**
 	 * @param 点击二级隐私后展现
@@ -94,6 +102,15 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 			return "second_error";
 		}	
 	}
+	/**
+	 * @param   注册三级级密码
+	 * @return second_rgted 注册三级密码成功
+	 */
+	public String third_rgt() {
+		  userService.
+		return third_rgted;  
+	}
+	
 	/**
 	 * @param 点击三级隐私后展现
 	 * @return  success 成功后三级隐私密码正确
