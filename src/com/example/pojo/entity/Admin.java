@@ -1,5 +1,5 @@
 package com.example.pojo.entity;
-
+ 
 
 public class Admin {
     private Integer adminId;

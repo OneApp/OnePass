@@ -36,8 +36,10 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 		User realUser=userService.login(user);
 		if(realUser!=null) {
 			ActionContext.getContext().getSession().put("user", realUser);
+			ServletActionContext.getRequest().setAttribute("First",userService.findFirstPrivacy(user));     //一级隐私的内容
 			 return "login";       //如果为true,登陆成功
 		}else {
+			ServletActionContext.getRequest().setAttribute("loginMsg","用户或密码错误");
 			return "login_error";  //如果不是true，登陆失败
 		}
 	}
@@ -55,6 +57,8 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 			return  "sended";
 		} catch (Exception e) {
 			e.printStackTrace();
+			ServletActionContext.getRequest().setAttribute("user",user);//回显
+			ServletActionContext.getRequest().setAttribute("registmsg","用户名重复，发送验证码失败");
 			return "user_repeat";
 		}       
 	}
@@ -70,8 +74,58 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 					return  "registered"; 
 								}	
 				else {  
+					ServletActionContext.getRequest().setAttribute("resertmsg","验证码输入错误，注册失败");
 					return "code_error";
-				}
-			  
+				}	  
+	}
+	/**
+	 * @param   注册二级密码
+	 * @return second_rgted 注册二级密码成功
+	 */
+	public String second_rgt() {
+		  userService.
+		return second_rgted;  
+	}
+	
+	/**
+	 * @param 点击二级隐私后展现
+	 * @return  success 成功后二级隐私密码正确
+	 * @return  error   失败后二级隐私密码错误
+	 */
+	public String Second() {
+		if(user.getUserPasswordTwo()==?) {
+			ActionContext.getContext().getSession().put("secstate", teacherlist);   //二级状态
+			ServletActionContext.getRequest().setAttribute("secondmsg",userService.getUserSecondPrivacy(user));;    //显示二级密码后的信息
+			return "second";
+		}else {
+			ServletActionContext.getRequest().setAttribute("secondmsg","二级密码错误，无法展开二级隐私信息");
+			return "second_error";
+		}	
+	}
+	/**
+	 * @param   注册三级级密码
+	 * @return second_rgted 注册三级密码成功
+	 */
+	public String third_rgt() {
+		  userService.
+		return third_rgted;  
+	}
+	
+	/**
+	 * @param 点击三级隐私后展现
+	 * @return  success 成功后三级隐私密码正确
+	 * @return  error   失败后三级隐私密码错误 
+	 */
+	public String Third() {
+		if(user.getUserPasswordThree()==?) {
+			ServletActionContext.getRequest().setAttribute("thirdmsg",userService.getUserSecondPrivacy(user));//显示三级密码后的信息
+			userService.findFirstPrivacy(user);     
+			return "third";
+		}else {
+			ServletActionContext.getRequest().setAttribute("thirdmsg","三级密码错误，无法展开三级隐私信息");
+			return "third_error";
+		}
+		
+		
 	}
 }

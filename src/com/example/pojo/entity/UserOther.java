@@ -1,5 +1,5 @@
 package com.example.pojo.entity;
-
+ 
 public class UserOther {
     private Integer userOtherId;
     private Integer userId;

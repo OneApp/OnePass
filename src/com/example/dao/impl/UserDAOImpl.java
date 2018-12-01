@@ -1,3 +1,4 @@
+
 package com.example.dao.impl;
 
 import java.util.List;
@@ -87,15 +88,15 @@ public class UserDAOImpl implements UserDAO {
 	}
 	/**
 	 * 用户查看二级隐私内容
-	 * 根据传过来userOther对象中属性值来查询，假设userOther里面含有userOtherId值
+	 * 根据传过来userOther对象中属性值来查询
 	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的二级隐私信息
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public UserOther findSecondPrivacy(UserOther userOther) {
-		String hql="select userCountry,userNation,userSex,userSoldier,userQQ,userWeChat,userPolitical,userBloodType,userEducation,userMarried,userIdPhoto,userProfession，userSalary from UserOther where userOtherId=?";
-		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, userOther.getUserOtherId());
+	public UserOther findSecondPrivacy(User user) {
+		String hql="from User u right join UserOther o where u.userId=?";
+		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
 			return list.get(0);
 		}else
@@ -106,16 +107,16 @@ public class UserDAOImpl implements UserDAO {
 	 * @param userOther 从service传递过来的userOther参数
 	 * @return 返回用户的三级隐私信息
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public User findThirdPrivacy(User user) {
-		String hql="select userName,userPhone,userEmail,userOther from User where userId=?";
+		@SuppressWarnings("unchecked")
+		public User findThirdPrivacy(User user) {
+		String hql="select u from User u join fetch UserOther o where u.userId=?";
 		List<User> list=(List<User>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
 			return list.get(0);
 		}else
 		return null;
-	}
+	 }
+	
 	/**
 	 * 用户更改一级隐私内容
 	 * @param user 从service传递过来的user参数
@@ -152,4 +153,15 @@ public class UserDAOImpl implements UserDAO {
 		u.setUserPassword(rePassword);
 		this.hibernateTemplate.update(u);
 	}
+	/**
+	 * 根据id返回user对象 查询二三级密码
+	 * @param user 从service传递最初登录时的user对象
+	 * @return 返回user对象
+	 */
+	@Override
+	public User findUserById(User user) {
+		User u=this.hibernateTemplate.get(User.class, user.getUserId());
+		return u;
+	}
+
 }
