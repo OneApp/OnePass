@@ -26,6 +26,10 @@ public interface UserDAO {
 	 */
 	User findByPhone(User user);
 	/**
+	 * 
+	 */
+	User findUserById(User user );
+	/**
 	 * 用户注册
 	 * @param user 从service传递过来的user参数
 	 */
@@ -41,7 +45,7 @@ public interface UserDAO {
 	 * @param user 从service传递过来的user参数
 	 * @return 返回用户的二级隐私信息
 	 */
-	UserOther findSecondPrivacy(UserOther userOther);
+	UserOther findSecondPrivacy(User user);
 	/**
 	 * 用户查看三级隐私内容
 	 * @param user 从service传递过来的user参数
@@ -69,4 +73,5 @@ public interface UserDAO {
 	 * @param rePassword 从service传递过来的新密码的参数
 	 */
 	void updatePassword(User user,String rePassword);
+	
 }
