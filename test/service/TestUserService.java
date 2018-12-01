@@ -12,18 +12,17 @@ import com.example.service.UserService;
 
 /**
  * service测试类
- * @author 胡龙
+ * @author 胡龙  严子江
  *
  */
 
 //帮我们创建容器
 @RunWith(SpringJUnit4ClassRunner.class)
 //指定创建容器时使用哪个配置文件
-@ContextConfiguration("classpath:applicationContext.xml,classpath:spring/serviceBean.xml,classpath:spring/daoBean.xml")
+@ContextConfiguration(locations= {"classpath:applicationContext.xml","classpath:spring/*Bean.xml"})
 public class TestUserService {
     @Resource(name="userService")
 	private UserService userService;
-    
     @Test
     public void testSendVCode() {
     	User user = new User();
@@ -38,10 +37,16 @@ public class TestUserService {
     	user.setUserName("胡龙");    	
     	userService.registerByEmail(user);
     }
-
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
-    
-    
+    /**
+     * @author 严子江
+     *	 测试用户登录的三种不同方法
+     */
+    @Test
+    public void testLogin() {
+    	User user=new User();
+//    	user.setUserName("严子江");	//如果是用户名方式登录
+//    	user.setUserPhone("15779933526"); //如果是手机号登录
+    	user.setUserEmail("673343330@qq.com"); //如果是邮箱登录
+    	System.out.println(userService.login(user).getUserEmail());
+    }
 }
