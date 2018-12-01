@@ -6,5 +6,5 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="userDao" class="com.example.dao.impl.UserDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
-	</bean>  
+	</bean>   
 </beans>
