@@ -93,9 +93,9 @@ public class UserDAOImpl implements UserDAO {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public UserOther findSecondPrivacy(UserOther userOther) {
-		String hql="select userCountry,userNation,userSex,userSoldier,userQQ,userWeChat,userPolitical,userBloodType,userEducation,userMarried,userIdPhoto,userProfession，userSalary from UserOther where userOtherId=?";
-		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, userOther.getUserOtherId());
+	public UserOther findSecondPrivacy(User user) {
+		String hql="from User u right join UserOther o where u.userId=?";
+		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
 			return list.get(0);
 		}else
