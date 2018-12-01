@@ -5,21 +5,26 @@
 <struts>
 	<!-- struts-default.xml在Struts2的核心包内 --> 
 	<package name="user" extends="default" namespace="/"> 
-	<global-results>
-		<result name="user_error">/code_error.jsp</result><!-- 验证码出现错误跳转到错误界面 -->
+<!-- 	<global-results>
+		<result name="user_error">/code_error.jsp</result>验证码出现错误跳转到错误界面
 	</global-results>
-		<!-- struts2异常处理框架 -->
+		struts2异常处理框架
 	<global-exception-mappings>
 		    <exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
-		</global-exception-mappings>
+		</global-exception-mappings> -->
 		<!-- 配置loginAction的login方法为一个Action -->
 		<action name="user_*" class="com.example.web.UserAction" method="{1}">
 			<!-- action的返回的结果页面 -->
+			<result name="sended">/register.jsp</result>    <!-- 发送完验证码传递一个user用来保存用户之前注册的信息-->
+			<result name="user_repeat">/register.jsp</result> <!--  验证码发送失败，用户重复 -->
+			<result name="registered">/success.jsp</result>   <!--  注册成功后到success界面 -->
+			<result name="code_error">/register.jsp</result>	<!-- 注册失败验证码输入错误 -->
 			<result name="login">/success.jsp</result>     <!--  登陆成功后打success界面 -->
 			<result name="login_error">/login.jsp</result>    <!--  登陆失败后刷新login界面 -->
-			<result name="sendcode">/register.jsp</result>    <!-- 发送完验证码传递一个user用来保存用户之前注册的信息-->
-			<result name="registered">/success.jsp</result>   <!--  注册成功后到success界面 -->
-			<result name="code_user">/code_user</result>	<!-- 注册失败验证码错误 -->
+			<result name="second">/second.jsp</result>   <!--  二级隐私 -->
+			<result name="second_error">/second</result>  <!--  二级错误后弹框密码错误 -->
+			<result name="third">/third.jsp</result>    <!--   三级隐私 -->
+			<result name="third_error">/third</result>   <!--  三级错误后弹框密码错误 -->
 		</action>        
 	</package>   
 </struts>
