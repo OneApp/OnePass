@@ -33,6 +33,13 @@ public interface UserService {
 	 */
 	//用户点击注册前发送验证码邮件
 	public String sendVCode(User user);
+	
+	/**
+	 * @author 胡龙
+	 * @param user 用户信息
+ 	 * @return User 返回用户所有的一级隐私信息
+	 */
+	public User findFirstPrivacy(User user);
 
 	/**
 	 * @author 严子江
