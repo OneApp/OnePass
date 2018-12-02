@@ -51,4 +51,10 @@ public interface UserService {
 	 * @return 返回该用户所有的三级隐私信息
 	 */
 	public User getUserThirdPrivacy(User user); 
+	/**
+	 *	根据id可以返回完整的User对象
+	 * @author 严子江
+	 * @return 返回该用户的所有信息
+	 */
+	public User getUserById(User user);
 }

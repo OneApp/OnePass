@@ -113,5 +113,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findFirstPrivacy(User user) {		
 		return userDao.findFirstPrivacy(user);
+	}
+	/**
+	 * @author 严子江
+	 * @return 返回该用户的所有信息
+	 */
+	@Override
+	public User getUserById(User user) {
+		// TODO Auto-generated method stub
+		return userDao.findUserById(user);
 	}				
 }
