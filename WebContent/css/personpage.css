@@ -612,11 +612,12 @@ h1, h2, h3, h4, h5 {
  5. Footer
 -------------------------------------------------------- */
 .site-footer {
-  position: relative;
+ position:absolute;
   z-index: 11;
   padding: 14px 0;
   background: rgba(0, 0, 0, 0.7);
-  margin-top: 30px;
+  bottom:0px;
+  width:100%;
 }
 .site-footer a {
   color: #5cb48e;
