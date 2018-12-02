@@ -27,6 +27,20 @@ public interface UserService {
 	public void registerByEmail(User user);
 	
 	/**
+	 * 注册二级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	public void setSecondPassword(User user);
+	
+	/**
+	 * 注册三级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	public void setThirdPassword(User user);
+	
+	/**
 	 * 
 	 * @param user action传递过来的用户信息
 	 * @return 验证码
@@ -51,4 +65,10 @@ public interface UserService {
 	 * @return 返回该用户所有的三级隐私信息
 	 */
 	public User getUserThirdPrivacy(User user); 
+	/**
+	 *	根据id可以返回完整的User对象
+	 * @author 严子江
+	 * @return 返回该用户的所有信息
+	 */
+	public User getUserById(User user);
 }
