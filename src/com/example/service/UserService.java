@@ -31,14 +31,14 @@ public interface UserService {
 	 * @author 胡龙
 	 * @param user 用户注册信息
 	 */
-	public void setSecondPassword(UserOther userOther);
+	public void setSecondPassword(User user, String rePassword);
 	
 	/**
 	 * 注册三级密码
 	 * @author 胡龙
 	 * @param user 用户注册信息
 	 */
-	public void setThirdPassword(User user);
+	public void setThirdPassword(User user, String rePassword);
 	
 	/**
 	 * 
