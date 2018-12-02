@@ -83,7 +83,7 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return second_rgted 注册二级密码成功
 	 */
 	public String second_rgt() {
-		  userService.
+		userService.setSecondPassword(user);//设置三级密码
 		return "second_rgted";  
 	}
 	
@@ -108,7 +108,7 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return second_rgted 注册三级密码成功
 	 */
 	public String third_rgt() {
-		  userService.
+		  userService.setThirdPassword(user);//设置三级密码
 		return "third_rgted";  
 	}
 	

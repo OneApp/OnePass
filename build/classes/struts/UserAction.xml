@@ -13,10 +13,10 @@
 			<result name="code_error">/register.jsp</result>	<!-- 注册失败验证码输入错误 -->
 			<result name="login">/success.jsp</result>     <!--  登陆成功后打success界面 -->
 			<result name="login_error">/login.jsp</result>    <!--  登陆失败后刷新login界面 -->
-			<result name="second_rgted"></result>             <!--  注册二级密码 -->
+			<result name="second_rgted">/success.jsp</result>             <!--  注册二级密码刷新success主界面-->
 			<result name="second">/second.jsp</result>   <!--  二级隐私 -->
 			<result name="second_error">/second.jsp</result>  <!--  二级错误后弹框密码错误 -->
-			<result name="third_rgted"></result>             <!--  注册三级密码 -->
+			<result name="third_rgted">/success.jsp</result>             <!--  注册三级密码刷新success界面-->
 			<result name="third">/third.jsp</result>    <!--   三级隐私 -->
 			<result name="third_error">/third.jsp</result>   <!--  三级错误后弹框密码错误 -->
 		</action>        
