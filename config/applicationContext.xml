@@ -27,7 +27,7 @@
 		<property name="username" value="${mail.smtp.username}"/>
 		<property name="password" value="${mail.smtp.password}"/>
 	</bean>
-	
+	  
 	<!-- 配置c3p0连接池，数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${jdbc.driver}"></property>
