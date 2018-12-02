@@ -35,7 +35,7 @@
 		<property name="user"  value="${jdbc.name}"></property>
 		<property name="password"  value="${jdbc.password}"></property>
 	</bean>
-	  
+	   
 	<!-- hibernate部分；Spring提供的会话工厂和hibernate模板 -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
