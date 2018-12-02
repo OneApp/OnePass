@@ -84,7 +84,7 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 */
 	public String second_rgt() {
 		  userService.
-		return second_rgted;  
+		return "second_rgted";  
 	}
 	
 	/**
@@ -93,11 +93,12 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return  error   失败后二级隐私密码错误
 	 */
 	public String Second() {
-		if(user.getUserPasswordTwo()==?) {
-			ActionContext.getContext().getSession().put("secstate", teacherlist);   //二级状态
+		if(user.getUserPasswordTwo()==userService.getUserById(user).getUserPasswordTwo()) {//输入框和数据库中二级密码匹配
+			ActionContext.getContext().getSession().put("secstate","true");   //保持二级登陆二级状态
 			ServletActionContext.getRequest().setAttribute("secondmsg",userService.getUserSecondPrivacy(user));;    //显示二级密码后的信息
 			return "second";
 		}else {
+			ActionContext.getContext().getSession().put("secstate","false");   //二级错误状态
 			ServletActionContext.getRequest().setAttribute("secondmsg","二级密码错误，无法展开二级隐私信息");
 			return "second_error";
 		}	
@@ -108,7 +109,7 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 */
 	public String third_rgt() {
 		  userService.
-		return third_rgted;  
+		return "third_rgted";  
 	}
 	
 	/**
@@ -117,11 +118,13 @@ public class UserAction extends ActionSupport  implements ModelDriven<User> {
 	 * @return  error   失败后三级隐私密码错误 
 	 */
 	public String Third() {
-		if(user.getUserPasswordThree()==?) {
+		if(user.getUserPasswordThree()==userService.getUserById(user).getUserPasswordThree()) {//与数据库匹配
+			ActionContext.getContext().getSession().put("thirstate","true");   //保持三级登陆状态
 			ServletActionContext.getRequest().setAttribute("thirdmsg",userService.getUserSecondPrivacy(user));//显示三级密码后的信息
 			userService.findFirstPrivacy(user);     
 			return "third";
 		}else {
+			ActionContext.getContext().getSession().put("thirstate","false");   //三级密码错误
 			ServletActionContext.getRequest().setAttribute("thirdmsg","三级密码错误，无法展开三级隐私信息");
 			return "third_error";
 		}
