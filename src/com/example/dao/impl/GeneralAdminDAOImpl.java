@@ -16,6 +16,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 	private HibernateTemplate hibernateTemplat;
 	public void setHibernateTemplat(HibernateTemplate hibernateTemplat) {
 		this.hibernateTemplat = hibernateTemplat;
+
 	}
 	
 	/**
@@ -34,6 +35,7 @@ public class GeneralAdminDAOImpl implements GeneralAdminDAO {
 		else
 		return null;
 	}
+
 	    
 	/**
 	 * (non-Javadoc)
