@@ -90,8 +90,8 @@ public class UserServiceImpl implements UserService {
 	 * @param user 用户注册信息
 	 */
 	@Override
-	public void setSecondPassword(UserOther userOther) {
-		userDao.updateSecondPrivacy(userOther);;		
+	public void setSecondPassword(User user, String rePassword) {
+		userDao.updatePassword(user,rePassword);		
 	}
 	/**
 	 * 注册三级密码
@@ -99,8 +99,8 @@ public class UserServiceImpl implements UserService {
 	 * @param user 用户注册信息
 	 */
 	@Override
-	public void setThirdPassword(User user) {
-		userDao.updateThirdPrivacy(user);;		
+	public void setThirdPassword(User user, String rePassword) {
+		userDao.updatePassword(user,rePassword);		
 	}		
 	/**
 	 * @author 严子江
