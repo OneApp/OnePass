@@ -31,7 +31,7 @@ public interface UserService {
 	 * @author 胡龙
 	 * @param user 用户注册信息
 	 */
-	public void setSecondPassword(User user);
+	public void setSecondPassword(UserOther userOther);
 	
 	/**
 	 * 注册三级密码
