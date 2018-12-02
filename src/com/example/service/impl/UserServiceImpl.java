@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userDao;
 	private MailSender mailsend;
 	
+	
 	public void setUserDao(UserDAO userDao) {
 		this.userDao = userDao;
 	}
