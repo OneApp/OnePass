@@ -84,9 +84,24 @@ public class UserServiceImpl implements UserService {
 		userDao.addUser(user);
 		
 	}
-	
-	
-	
+	/**
+	 * 注册二级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	@Override
+	public void setSecondPassword(User user) {
+		userDao.setSecondPassword(user);		
+	}
+	/**
+	 * 注册三级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	@Override
+	public void setThirdPassword(User user) {
+		userDao.setThirdPassword(user);		
+	}		
 	/**
 	 * @author 严子江
 	 * @return 返回用户所有的二级隐私信息
@@ -122,5 +137,7 @@ public class UserServiceImpl implements UserService {
 	public User getUserById(User user) {
 		// TODO Auto-generated method stub
 		return userDao.findUserById(user);
-	}				
+	}
+
+				
 }

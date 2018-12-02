@@ -27,6 +27,20 @@ public interface UserService {
 	public void registerByEmail(User user);
 	
 	/**
+	 * 注册二级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	public void setSecondPassword(User user);
+	
+	/**
+	 * 注册三级密码
+	 * @author 胡龙
+	 * @param user 用户注册信息
+	 */
+	public void setThirdPassword(User user);
+	
+	/**
 	 * 
 	 * @param user action传递过来的用户信息
 	 * @return 验证码
