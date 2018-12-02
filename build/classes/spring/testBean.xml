@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="testDAO" class="com.example.dao.impl.TestDAOImpl">
-		<property name="hibernateTemplate" ref="hTemplate"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
 	</bean>
 	
 	<bean id="testService" class="com.example.service.impl.TestServiceImpl">
