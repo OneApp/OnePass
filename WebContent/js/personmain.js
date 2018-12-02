@@ -1,3 +1,9 @@
+
+/* 
+ * 
+ * 用户页面跳转 
+ *  
+ *  */
 (function($) {
 
 	"use strict";	
@@ -38,13 +44,7 @@
 		return false;
 	});
 
-	$(".main-menu a.contactbutton").click(function(){
-		$("#menu-container .content").fadeOut();
-		$("#menu-container .contact-section").slideDown('slow');
-		$(".logo-top-margin").animate({marginTop:'0'}, "slow");
-		$(".logo-top-margin").animate({marginLeft:'39%'}, "slow");
-		return false;
-	});
+	
 
 	$('.toggle-menu').click(function(){
         $('.show-menu').stop(true,true).slideToggle();

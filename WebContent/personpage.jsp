@@ -11,60 +11,52 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/personpage.css">
-
-
     </head>
     <body>
         <!-- 顶部start -->
 		<jsp:include page="header.jsp"/>
 		<!-- 顶部end -->
-
-
-
-        <div class="site-bg"></div>
+		
+     <div class="site-bg"></div>
         <div class="site-bg-overlay"></div>
-        
-      
-
         <div class="container" id="page-content">
             <div class="row">
 				
-				
+				<!-- 左导航开始 -->
 				  <div class="col-md-3 hidden-sm">  
                     <nav id="nav" class="main-navigation hidden-xs hidden-sm">
                         <ul class="main-menu">
                             <li>
                                 <a class="show-1 active homebutton" href="#"></i>Home</a>
                             </li>
-                            <li>
-
+                            <li>、
                                 <a class="show-2 aboutbutton" >二级隐私</a>
                             </li>
                             <li>
                                 <a class="show-3 projectbutton" href="#"></i>三级隐私</a>
                             </li>
-                            <li>
-                                <a class="show-5 contactbutton" href="#">联系我们</a>
-                            </li>
+                           
                         </ul>
                     </nav>
                 </div>
                  
+				<!-- 左导结束-->
 				
+				<!-- 右部主体开始 -->
                 <div class="col-md-9 col-sm-12 content-holder">
                     <!-- CONTENT -->
                     <div id="menu-container">
                         <div class="logo-holder logo-top-margin">
                           <a href="#" class="site-brand">ONEPASS</a>
                         </div>
-                        
-                        
+  						
+  						<!-- 一级隐私开始 -->
                         <div id="menu-1" class="homepage home-section text-center">
                             <div class="welcome-text">
                                 <h2>Hello, Welcome to <strong>onepass person page</strong></h2>
                             <div class="box-content">
                                 <h3 class="widget-title">基本信息</h3>
-                                
+    
                                 <table>
 									<tr>
  										<td rowspan="3" style="width:200px; text-align:left;">头像</td>
@@ -86,14 +78,12 @@
 									</tr>
 									
 								</table>
-                                
-
- 
-
-                            </div>
+					     </div>
                             </div>
                         </div>
-
+						<!-- 一级隐私结束-->
+						
+						<!-- 二级隐私开始-->
                        <div id="menu-2" class="content about-section">
                             <div class="box-content">
                                 <h3 class="widget-title">二级隐私</h3>
@@ -126,7 +116,9 @@
 								</table>
                             </div>
                         </div>
+						<!-- 二级隐私结束-->
 						
+						<!-- 三级隐私开始-->
                         <div id="menu-3" class="content gallery-section">
                             <div class="box-content">
                                 <h3 class="widget-title">三级隐私</h3>
@@ -148,38 +140,11 @@
 								</table>
                             </div>
                         </div>
-
-                        <div id="menu-4" class="content contact-section">
-                            <div class="row">
-                                <div class="col-md-8 col-sm-8 col-md-offset-2">
-                                    <div class="box-content">
-                                        <h3 class="widget-title">Send Us A Message</h3>
-                                        <form class="contact-form">
-                                            <fieldset>
-                                                <input type="text" class="name" id="name" placeholder="Name...">
-                                            </fieldset> 
-                                            <fieldset>
-                                                <input type="email" class="email" id="email" placeholder="Email...">
-                                            </fieldset> 
-                                            <fieldset>
-                                                <input type="text" class="subject" id="subject" placeholder="Subject...">
-                                            </fieldset>
-                                            <fieldset>
-                                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Message.."></textarea>
-                                            </fieldset>
-                                            <fieldset>
-                                                <input type="submit" class="button" id="button" value="Send Message">
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                        </div>
-
+						<!-- 三级隐私结束-->
+						
                     </div>
                 </div>
-
+				<!-- 右部主体结束 -->
 
               
                 
