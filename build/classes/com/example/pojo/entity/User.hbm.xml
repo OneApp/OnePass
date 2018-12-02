@@ -52,5 +52,6 @@
         <property name="userWeight" type="java.lang.Integer">
             <column name="userWeight" />
         </property>
+        <one-to-one name="userOther" class="com.example.pojo.entity.UserOther" property-ref="user" cascade="all" constrained="true"></one-to-one>
     </class>
 </hibernate-mapping>

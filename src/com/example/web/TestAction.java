@@ -11,16 +11,12 @@ public class TestAction extends ActionSupport {
 	
 	public void setTestService(TestService testService) {
 		this.testService = testService;
+	}  
+    
+	public String getUser() {
+		// TODO Auto-generated method stub
+		return null;
+
 	}
-	
-	public String test() {
-		List<TestUser> users=testService.getAll();
-		for(TestUser u:users) {
-			System.out.println(u.getUserName());
-		}
-		if(users!=null) {
-			return SUCCESS;
-		}
-		return "index";
-	}
+
 }

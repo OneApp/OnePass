@@ -1,26 +1,12 @@
 package com.example.pojo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-
-@Entity
-@Table
 public class Admin {
-	@Id
-	@Column
     private Integer adminId;
-	@Column
     private String adminName;
-	@Column
-	private String adminPasswprd;
-	@Column
+	private String adminPassword;
 	private boolean adminJurisdiction;
-	@Column
 	private String adminPhone;
-	@Column
 	private String adminEmail;
 	public Integer getAdminId() {
 		return adminId;
@@ -34,11 +20,11 @@ public class Admin {
 	public void setAdminName(String adminName) {
 		this.adminName = adminName;
 	}
-	public String getAdminPasswprd() {
-		return adminPasswprd;
+	public String getAdminPassword() {
+		return adminPassword;
 	}
-	public void setAdminPasswprd(String adminPasswprd) {
-		this.adminPasswprd = adminPasswprd;
+	public void setAdminPassword(String adminPassword) {
+		this.adminPassword = adminPassword;
 	}
 	public boolean isAdminJurisdiction() {
 		return adminJurisdiction;
