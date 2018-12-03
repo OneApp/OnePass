@@ -2,25 +2,60 @@ package com.example.pojo.entity;
  
 import java.util.Date;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+@Entity
+@Table(name="onepass_user")
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="userId")
 	private Integer userId;
+	@Column(name="userPhone")
     private String userPhone;
+	@Column(name="userEmail")
     private String userEmail;
+	@Column(name="userCreateDate",columnDefinition="datetime")
     private Date userCreateDate;
+	@Column(name="userPassword")
     private String userPassword;
+	@Column(name="userPasswordTwo")
     private String userPasswordTwo;
+	@Column(name="userPasswordThree")
     private String userPasswordThree;
+	@Column(name="userName")
     private String userName;
+	@Column(name="userHead")
     private String userHead;
+	@Column(name="userBirthday" ,columnDefinition="datetime")
     private Date userBirthday;
-	private boolean userBirthdayIsCalendar;
+	@Column(name="userBirthdayIsCalendar")
+	private Boolean userBirthdayIsCalendar;
+	@Column(name="userSign")
     private String userSign;
+	@Column(name="userHobbies")
     private String userHobbies;
+	@Column(name="userMajor")
     private String userMajor;
+	@Column(name="userHeight")
     private Integer userHeight;
+	@Column(name="userWeight")
     private Integer userWeight;
+	@OneToOne(mappedBy="user")
+	@Cascade(CascadeType.ALL)
     private UserOther userOther;
-    
+  
 	public UserOther getUserOther() {
 		return userOther;
 	}
@@ -123,5 +158,19 @@ public class User {
 	public void setUserWeight(Integer userWeight) {
 		this.userWeight = userWeight;
 	}
-
+	public User() {}
+	public User(String userName, String userHead, Date userBirthday, Boolean userBirthdayIsCalendar, String userSign,
+			String userHobbies, String userMajor, Integer userHeight, Integer userWeight) {
+		super();
+		this.userName = userName;
+		this.userHead = userHead;
+		this.userBirthday = userBirthday;
+		this.userBirthdayIsCalendar = userBirthdayIsCalendar;
+		this.userSign = userSign;
+		this.userHobbies = userHobbies;
+		this.userMajor = userMajor;
+		this.userHeight = userHeight;
+		this.userWeight = userWeight;
+	}
+	
 }

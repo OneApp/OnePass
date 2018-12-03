@@ -1,12 +1,28 @@
 package com.example.pojo.entity;
- 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="onepass_admin")
 public class Admin {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="adminId")
     private Integer adminId;
+	@Column(name="adminName")
     private String adminName;
+	@Column(name="adminPassword")
 	private String adminPassword;
+	@Column(name="adminJurisdiction")
 	private boolean adminJurisdiction;
+	@Column(name="adminPhone")
 	private String adminPhone;
+	@Column(name="adminEmail")
 	private String adminEmail;
 	public Integer getAdminId() {
 		return adminId;

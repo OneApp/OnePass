@@ -1,27 +1,64 @@
 package com.example.pojo.entity;
- 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+@Entity
+@Table(name="onepass_userother")
 public class UserOther {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="userOtherId")
     private Integer userOtherId;
-    private Integer userId;
+	@Column(name="userCountry")
 	private String userCountry;
+	@Column(name="userNation")
 	private String userNation;
+	@Column(name="userSex")
 	private String userSex;
-	private boolean userSoldier;
+	@Column(name="userSoldier")
+	private Boolean userSoldier;
+	@Column(name="userQQ")
 	private String userQQ;
+	@Column(name="userWeChat")
 	private String userWeChat;
+	@Column(name="userPolitical")
 	private String userPolitical;
+	@Column(name="userBloodType")
 	private String userBloodType;
+	@Column(name="userEducation")
 	private String userEducation;
-	private boolean userMarried;
+	@Column(name="userMarried")
+	private Boolean userMarried;
+	@Column(name="userIdPhoto")
 	private String userIdPhoto;
+	@Column(name="userProfession")
 	private String userProfession;
+	@Column(name="userSalary")
 	private String userSalary;
+	@Column(name="userRealName")
 	private String userRealName;
+	@Column(name="userIdNumber")
 	private String userIdNumber;
+	@Column(name="userNationPlace")
 	private String userNationPlace;
+	@Column(name="userLocation")
 	private String userLocation;
+	@OneToOne(fetch = FetchType.EAGER)//设置加载
+	@Cascade(CascadeType.ALL)//设置级联操作
+    @JoinColumn(name = "userId",unique = true)
 	private User user;
-	
+
 	public User getUser() {
 		return user;
 	}
@@ -33,12 +70,6 @@ public class UserOther {
 	}
 	public void setUserOtherId(Integer userOtherId) {
 		this.userOtherId = userOtherId;
-	}
-	public Integer getUserId() {
-		return userId;
-	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
 	}
 	public String getUserCountry() {
 		return userCountry;

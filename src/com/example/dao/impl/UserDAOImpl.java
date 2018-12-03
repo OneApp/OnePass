@@ -2,12 +2,13 @@ package com.example.dao.impl;
  
 import java.util.List;
 
+import org.junit.Test;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.example.dao.UserDAO;
 import com.example.pojo.entity.User;
 import com.example.pojo.entity.UserOther;
-
+ 
 public class UserDAOImpl implements UserDAO {
     
 	private HibernateTemplate hibernateTemplate;
@@ -77,12 +78,13 @@ public class UserDAOImpl implements UserDAO {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
+	
 	public User findFirstPrivacy(User user) {
-		String hql="select userName,userHead,userBirthday,userBirthdayIsCalendar,userSign,userHobbies,userMajor,userHeight,userWeight from User where userId=?";
+		String hql="select new User(userName,userHead,userBirthday,userBirthdayIsCalendar,userSign,userHobbies,userMajor,userHeight,userHeight) from User where userId=?";
 		List<User> list=(List<User>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
 			return list.get(0);
-		}else
+		}else 
 		return null;
 	}
 	/**
@@ -94,11 +96,11 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public UserOther findSecondPrivacy(User user) {
-		String hql="from User u right join UserOther o where u.userId=?";
+		String hql="from UserOther where userId=?";
 		List<UserOther> list=(List<UserOther>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
-			return list.get(0);
-		}else
+			return list.get(0); 
+		}else 
 		return null;
 	}
 	/**
@@ -108,21 +110,20 @@ public class UserDAOImpl implements UserDAO {
 	 */
 		@SuppressWarnings("unchecked")
 		public User findThirdPrivacy(User user) {
-		String hql="select u from User u join fetch UserOther o where u.userId=?";
+		String hql="select u from User u join u.userOther uo on u.userId=uo.user.userId where u.userId=?";
 		List<User> list=(List<User>) this.hibernateTemplate.find(hql, user.getUserId());
 		if(list.size()>0) {
 			return list.get(0);
 		}else
 		return null;
 	 }
-	
 	/**
 	 * 用户更改一级隐私内容
 	 * @param user 从service传递过来的user参数
 	 */
 	@Override
 	public void updateFirstPrivacy(User user) {
-
+          
 	}
 	/**
 	 * 用户更改二级隐私内容
